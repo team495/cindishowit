@@ -29,9 +29,9 @@ html{scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
 /* ── LAYOUT ── */
-.wrap{width:100%;padding:0 6vw}
-.wrap-md{width:100%;max-width:1400px;margin:0 auto;padding:0 6vw}
-.wrap-sm{max-width:900px;margin:0 auto;padding:0 6vw}
+.wrap{max-width:1800px;margin:0 auto;padding:0 80px}
+.wrap-md{max-width:1500px;margin:0 auto;padding:0 80px}
+.wrap-sm{max-width:1100px;margin:0 auto;padding:0 80px}
 
 /* ── TYPE ── */
 .eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);font-weight:700;display:block;margin-bottom:18px}
@@ -86,9 +86,9 @@ nav.scrolled{box-shadow:0 2px 28px rgba(44,60,50,.08)}
 
 /* ── HERO ── */
 .hero{background:var(--cream);position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column}
-.hero-grid{display:grid;grid-template-columns:1fr 400px;flex:1}
-.hero-text{display:flex;align-items:center;padding:100px 60px 100px 0;position:relative;z-index:2}
-.hero-text-inner{max-width:500px}
+.hero-grid{display:grid;grid-template-columns:1fr 520px;flex:1}
+.hero-text{display:flex;align-items:center;padding:100px 80px 100px 0;position:relative;z-index:2}
+.hero-text-inner{max-width:680px}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);padding:9px 18px;font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:#000;margin-bottom:32px;font-weight:500}
 .hero-tag::before{content:'';width:7px;height:7px;background:var(--sage);border-radius:50%;flex-shrink:0}
 .hero-sub{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.6;color:#000;margin-bottom:18px}
@@ -199,8 +199,8 @@ nav.scrolled{box-shadow:0 2px 28px rgba(44,60,50,.08)}
 .sc-dark .tcard-role{color:rgba(255,255,255,.6)}
 
 /* ── SPLIT LAYOUTS ── */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
-.split-3{display:grid;grid-template-columns:280px 1fr;gap:60px;align-items:start}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
+.split-3{display:grid;grid-template-columns:360px 1fr;gap:100px;align-items:start}
 
 /* ── DIAGNOSTIC ── */
 .diag-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;padding:22px 0;border-top:1px solid var(--border-l);transition:background .2s,padding-left .2s}
