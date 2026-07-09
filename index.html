@@ -72,11 +72,22 @@ nav.scrolled{box-shadow:0 2px 28px rgba(44,60,50,.08)}
 .ncta:hover{background:var(--blue-d);transform:translateY(-1px)}
 
 /* ── BUTTONS ── */
-.btn{display:inline-block;background:var(--blue);color:#fff;font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 34px;text-decoration:none;font-weight:600;border-radius:100px;transition:background .25s,transform .2s,box-shadow .25s}
-.btn:hover{background:var(--blue-d);transform:translateY(-2px);box-shadow:0 8px 22px rgba(60,85,108,.26)}
-.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.28);color:#f0e8dc}
-.btn-ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
-.btn-sub{display:block;font-size:.65rem;color:var(--ink-l);margin-top:10px;letter-spacing:.02em}
+@keyframes btn-pulse{
+  0%{box-shadow:0 0 0 0 rgba(60,85,108,.55)}
+  60%{box-shadow:0 0 0 18px rgba(60,85,108,0)}
+  100%{box-shadow:0 0 0 0 rgba(60,85,108,0)}
+}
+@keyframes btn-pulse-ghost{
+  0%{box-shadow:0 0 0 0 rgba(255,255,255,.4)}
+  60%{box-shadow:0 0 0 18px rgba(255,255,255,0)}
+  100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}
+}
+.btn{display:inline-block;background:var(--blue);color:#fff;font-size:15px;letter-spacing:.12em;text-transform:uppercase;padding:18px 48px;text-decoration:none;font-weight:700;border-radius:100px;transition:background .25s,transform .2s,box-shadow .25s;animation:btn-pulse 2s ease-out 0.8s 3}
+.btn:hover{background:var(--blue-d);transform:translateY(-2px);box-shadow:0 10px 28px rgba(60,85,108,.32);animation:none}
+.btn-ghost{background:transparent;border:2px solid rgba(255,255,255,.6);color:#fff;animation:btn-pulse-ghost 2s ease-out 0.8s 3}
+.btn-ghost:hover{background:rgba(255,255,255,.12);transform:translateY(-2px);animation:none}
+.btn-sub{display:block;font-size:15px;color:#666;margin-top:16px;letter-spacing:.02em;text-align:center}
+.btn-wrap{text-align:center;margin-top:52px}
 
 /* ── SECTIONS ── */
 .sec{padding:96px 0;background:var(--paper)}
@@ -302,7 +313,7 @@ footer{background:var(--ink);padding:44px 0}
 .sec-graphic{position:absolute;pointer-events:none;user-select:none}
 
 /* close */
-.close-center{text-align:center;max-width:520px;margin:0 auto}
+.close-center{text-align:center;max-width:900px;margin:0 auto}
 
 /* ── RESPONSIVE ── */
 @media(max-width:760px){
@@ -640,7 +651,7 @@ footer{background:var(--ink);padding:44px 0}
   </div><!-- /phase-stack -->
 
   <div class="wrap" style="padding-bottom:80px">
-    <div class="reveal">
+    <div class="reveal btn-wrap">
       <a href="#" class="btn">See if this approach is right for you →</a>
       <span class="btn-sub">Book a free 1:1 call with me.</span>
     </div>
