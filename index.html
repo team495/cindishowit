@@ -1,0 +1,974 @@
+<!doctype html>
+<title>Cindi Stickle Nutrition</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+:root{
+  --cream:#f6ede0;
+  --paper:#f8f8f8;
+  --sage:#64726b;
+  --sage-pale:#d2e0e8;
+  --blue:#3c556c;
+  --blue-d:#2d4257;
+  --peach:#fadabc;
+  --peach-d:#f5c9a0;
+  --ink:#2e2e2e;
+  --ink-m:#64726b;
+  --ink-l:#9aaba4;
+  --border:#e3d8cc;
+  --border-l:#ece6de;
+  --serif:Georgia,'Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,system-ui,sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+  --nav-h:68px;
+}
+
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ── LAYOUT ── */
+.wrap{max-width:1040px;margin:0 auto;padding:0 52px}
+.wrap-md{max-width:780px;margin:0 auto;padding:0 52px}
+.wrap-sm{max-width:600px;margin:0 auto;padding:0 52px}
+
+/* ── TYPE ── */
+.eyebrow{font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);font-weight:600;display:block;margin-bottom:14px}
+h2{font-family:var(--serif);font-size:2rem;font-weight:400;line-height:1.3;color:var(--ink);margin-bottom:16px;text-wrap:balance}
+h3{font-family:var(--serif);font-size:1.1rem;font-weight:400;line-height:1.4;color:var(--ink);margin-bottom:8px}
+p{font-size:.9rem;line-height:1.85;color:var(--ink-m);margin-bottom:13px;font-weight:400}
+p:last-child{margin-bottom:0}
+strong{font-weight:600;color:var(--ink)}
+em{font-style:italic}
+.rule{width:36px;height:1px;background:var(--sage);margin:22px 0}
+.rule-c{margin:22px auto}
+
+/* ── REVEAL ── */
+@media(prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  .stagger>*{opacity:0;transform:translateY(16px);transition:opacity .56s var(--ease),transform .56s var(--ease)}
+  .stagger>.in{opacity:1;transform:none}
+}
+
+/* ── NAV ── */
+nav{
+  background:rgba(248,248,248,.95);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border-l);
+  height:var(--nav-h);display:flex;align-items:center;
+  position:sticky;top:0;z-index:200;
+  transition:box-shadow .3s;
+}
+nav.scrolled{box-shadow:0 2px 28px rgba(44,60,50,.08)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.logo{font-family:var(--serif);font-size:1.05rem;color:var(--ink);line-height:1.1}
+.logo small{display:block;font-family:var(--sans);font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-m);margin-top:3px;font-weight:500}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nl{font-size:.7rem;color:var(--ink-m);text-decoration:none;letter-spacing:.03em;font-weight:500;transition:color .25s}
+.nl:hover{color:var(--sage)}
+.ncta{background:var(--blue);color:#fff;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;padding:10px 22px;text-decoration:none;font-weight:600;border-radius:100px;transition:background .25s,transform .2s;display:inline-block}
+.ncta:hover{background:var(--blue-d);transform:translateY(-1px)}
+
+/* ── BUTTONS ── */
+.btn{display:inline-block;background:var(--blue);color:#fff;font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;padding:14px 34px;text-decoration:none;font-weight:600;border-radius:100px;transition:background .25s,transform .2s,box-shadow .25s}
+.btn:hover{background:var(--blue-d);transform:translateY(-2px);box-shadow:0 8px 22px rgba(60,85,108,.26)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.28);color:#f0e8dc}
+.btn-ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+.btn-sub{display:block;font-size:.65rem;color:var(--ink-l);margin-top:10px;letter-spacing:.02em}
+
+/* ── SECTIONS ── */
+.sec{padding:96px 0;background:var(--paper)}
+.sec-cream{background:var(--cream)}
+.sec-pale{background:var(--sage-pale)}
+.sec-dark{background:var(--blue);position:relative;overflow:hidden}
+
+/* ── HERO ── */
+.hero{background:var(--cream);position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column}
+.hero-grid{display:grid;grid-template-columns:1fr 400px;flex:1}
+.hero-text{display:flex;align-items:center;padding:100px 60px 100px 0;position:relative;z-index:2}
+.hero-text-inner{max-width:500px}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);padding:7px 14px;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-m);margin-bottom:28px;font-weight:500}
+.hero-tag::before{content:'';width:6px;height:6px;background:var(--sage);border-radius:50%;flex-shrink:0}
+h1{font-family:var(--serif);font-size:3.15rem;font-weight:400;line-height:1.12;color:var(--ink);margin-bottom:20px;text-wrap:balance}
+.hero-sub{font-family:var(--serif);font-style:italic;font-size:1rem;line-height:1.76;color:var(--ink-m);margin-bottom:14px}
+.hero-kicker{font-size:.88rem;line-height:1.72;color:var(--ink-m);margin-bottom:36px}
+
+/* hero right panel */
+.hero-right{position:relative;background:var(--sage-pale);overflow:hidden}
+.hero-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:rgba(100,114,107,.35);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:24px;z-index:2}
+.hero-botanical-bg{position:absolute;inset:0;z-index:1;pointer-events:none}
+
+/* hero watermark */
+.hero-wm{position:absolute;bottom:20px;left:-4px;font-family:var(--serif);font-style:italic;font-size:9rem;color:rgba(100,114,107,.07);line-height:1;pointer-events:none;white-space:nowrap;z-index:1}
+
+/* hero badge */
+.hero-badge{position:absolute;bottom:36px;left:0;z-index:10;width:106px;height:106px}
+
+/* wave */
+.hero-wave{position:absolute;bottom:-1px;left:0;right:0;z-index:3;line-height:0}
+
+/* ── TICKER ── */
+.ticker-wrap{background:var(--paper);border-top:1px solid var(--border-l);border-bottom:1px solid var(--border-l);overflow:hidden}
+.ticker{display:flex;width:max-content;animation:tick 26s linear infinite}
+.ticker:hover{animation-play-state:paused}
+@keyframes tick{to{transform:translateX(-50%)}}
+.tick-item{display:flex;align-items:center;gap:8px;padding:12px 26px;white-space:nowrap;flex-shrink:0}
+.tick-dot{width:4px;height:4px;background:var(--sage);border-radius:50%;flex-shrink:0;opacity:.55}
+.tick-text{font-size:.64rem;letter-spacing:.07em;color:var(--ink-m);font-weight:500;text-transform:uppercase}
+
+/* ── STACKING CARDS ── */
+.stack-outer{
+  position:relative;
+  /* height set by JS or enough padding for cards to travel */
+}
+.stack-track{
+  position:relative;
+}
+.scard{
+  position:sticky;
+  top:calc(var(--nav-h) + 16px);
+  border-radius:16px;
+  transform-origin:top center;
+  will-change:transform;
+  margin-bottom:24px;
+  overflow:hidden;
+  box-shadow:0 4px 32px rgba(44,60,50,.1);
+}
+/* Each card needs height so the next one has room to enter */
+.scard-spacer{
+  height:80vh;
+  position:relative;
+}
+.scard-spacer:last-child{
+  margin-bottom:0;
+}
+.scard-inner{
+  position:sticky;
+  top:calc(var(--nav-h) + 16px);
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 6px 40px rgba(44,60,50,.12);
+  transform-origin:top center;
+  will-change:transform,filter;
+  transition:transform 0.08s linear, filter 0.08s linear;
+}
+
+/* Card themes */
+.sc-cream{background:var(--cream)}
+.sc-paper{background:var(--paper)}
+.sc-pale{background:var(--sage-pale)}
+.sc-dark{background:var(--blue)}
+.sc-peach{background:var(--peach)}
+
+.scard-content{padding:56px 60px}
+
+/* Phase card specifics */
+.phase-number{
+  font-family:var(--serif);font-size:6rem;font-weight:400;
+  line-height:1;color:var(--border);
+  position:absolute;top:40px;right:52px;
+  user-select:none;pointer-events:none;
+  transition:color .4s;
+}
+.scard-inner:hover .phase-number{color:rgba(100,114,107,.2)}
+.phase-label-tag{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);font-weight:600;display:block;margin-bottom:10px}
+.phase-title{font-weight:600;font-size:.95rem;color:var(--ink);margin-bottom:10px;letter-spacing:.01em}
+.phase-body{font-size:.88rem;line-height:1.82;color:var(--ink-m)}
+
+/* Testimonial card */
+.tcard-quote{font-family:var(--serif);font-style:italic;font-size:1.4rem;line-height:1.55;color:var(--ink);margin-bottom:24px;text-wrap:balance}
+.tcard-attr{display:flex;align-items:center;gap:14px}
+.tcard-av{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;letter-spacing:.08em;font-weight:600;flex-shrink:0}
+.tcard-av-sage{background:var(--sage);color:#fff}
+.tcard-av-blue{background:var(--blue);color:#fff}
+.tcard-av-peach{background:var(--peach-d);color:var(--blue-d)}
+.tcard-name{font-size:.8rem;font-weight:600;color:var(--ink);display:block}
+.tcard-role{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-l);margin-top:2px;font-weight:500;display:block}
+
+/* Dark card text */
+.sc-dark .eyebrow{color:var(--peach)}
+.sc-dark h2{color:#ede8dc}
+.sc-dark p{color:rgba(237,232,220,.6)}
+.sc-dark .phase-label-tag{color:var(--peach)}
+.sc-dark .phase-title{color:#ede8dc}
+.sc-dark .phase-body{color:rgba(237,232,220,.65)}
+.sc-dark .phase-number{color:rgba(255,255,255,.06)}
+.sc-dark blockquote{color:#ede8dc}
+.sc-dark .tcard-name{color:#ede8dc}
+.sc-dark .tcard-role{color:rgba(237,232,220,.4)}
+
+/* ── SPLIT LAYOUTS ── */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.split-3{display:grid;grid-template-columns:280px 1fr;gap:60px;align-items:start}
+
+/* ── DIAGNOSTIC ── */
+.diag-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;padding:17px 0;border-top:1px solid var(--border-l);transition:background .2s,padding-left .2s}
+.diag-row:last-child{border-bottom:1px solid var(--border-l)}
+.diag-row:hover{background:rgba(100,114,107,.04);padding-left:6px}
+.diag-q{font-family:var(--serif);font-style:italic;font-size:.9rem;color:var(--ink);line-height:1.5}
+.diag-v{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-l);font-weight:500;white-space:nowrap}
+
+/* ── CALLOUT ── */
+.callout{padding:30px 34px;border-left:3px solid var(--sage);background:rgba(100,114,107,.05);margin-top:28px}
+.callout p{font-family:var(--serif);font-size:.98rem;line-height:1.85;color:var(--ink);margin:0}
+
+/* ── IS THIS FOR YOU ── */
+.fy-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:22px;border-top:1px solid rgba(60,85,108,.12)}
+.fy-item{display:flex;gap:14px;align-items:flex-start;padding:19px 0;border-bottom:1px solid rgba(60,85,108,.1);font-size:.87rem;line-height:1.78;color:var(--ink-m);transition:color .25s}
+.fy-item:hover{color:var(--ink)}
+.fy-item:nth-child(odd){padding-right:32px}
+.fy-item:nth-child(even){padding-left:32px;border-left:1px solid rgba(60,85,108,.1)}
+.fy-arrow{color:var(--sage);flex-shrink:0;font-family:var(--serif);font-style:italic;font-size:.95rem;margin-top:2px}
+
+/* ── PHOTO BLOCK ── */
+.photo-block{background:var(--border-l);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:rgba(100,114,107,.35);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:24px;min-height:480px;position:sticky;top:calc(var(--nav-h) + 16px);transition:transform .3s var(--ease)}
+.photo-block:hover{transform:scale(1.01)}
+
+/* ── STATS ── */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);margin:28px 0 0}
+.stat{padding:20px 0;border-right:1px solid var(--border);text-align:center;transition:background .3s}
+.stat:last-child{border-right:none}
+.stat:hover{background:var(--cream)}
+.stat-n{font-family:var(--serif);font-size:1.65rem;color:var(--ink);display:block;margin-bottom:4px}
+.stat-l{font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-m);font-weight:500}
+
+/* ── PILLS ── */
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin:22px 0}
+.pill{font-size:.58rem;letter-spacing:.07em;text-transform:uppercase;border:1px solid var(--border);color:var(--ink-m);padding:5px 12px;font-weight:500;transition:border-color .25s,color .25s}
+.pill:hover{border-color:var(--sage);color:var(--sage)}
+.press-label{font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-l);margin:22px 0 9px;font-weight:500}
+.press-row{display:flex;gap:22px;align-items:center}
+.press-name{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-m);font-weight:600}
+
+/* ── IMAGINE ── */
+.imagine{margin:22px 0;border-top:1px solid var(--border)}
+.imagine-item{display:flex;gap:16px;align-items:flex-start;padding:17px 0;border-bottom:1px solid var(--border);font-size:.88rem;line-height:1.78;color:var(--ink-m);transition:color .25s,padding-left .25s}
+.imagine-item:hover{color:var(--ink);padding-left:5px}
+.imagine-idx{font-family:var(--serif);font-size:.78rem;color:var(--sage);flex-shrink:0;margin-top:4px;min-width:18px}
+
+/* ── OBJECTIONS ── */
+.obj-item{display:grid;grid-template-columns:1fr 1fr;gap:22px 56px;padding:24px 0;border-top:1px solid var(--border);align-items:start;transition:background .2s}
+.obj-item:last-child{border-bottom:1px solid var(--border)}
+.obj-item:hover{background:rgba(100,114,107,.03)}
+.obj-q{font-family:var(--serif);font-style:italic;font-size:.9rem;line-height:1.55;color:var(--ink)}
+.obj-a{font-size:.84rem;line-height:1.82;color:var(--ink-m);margin:0}
+
+/* ── FAQ ── */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 64px;margin-top:32px;align-items:start}
+.faq-item{padding:17px 0;border-top:1px solid var(--border)}
+.faq-q{font-size:.86rem;font-weight:600;color:var(--ink);margin-bottom:7px;line-height:1.4}
+.faq-a{font-size:.81rem;line-height:1.76;color:var(--ink-m);margin:0}
+
+/* ── KIM ── */
+.kim{background:var(--blue);padding:80px 0;position:relative;overflow:hidden}
+.kim-mark{position:absolute;left:24px;top:-56px;font-family:var(--serif);font-size:22rem;color:rgba(255,255,255,.07);line-height:1;user-select:none;pointer-events:none}
+.kim-inner{max-width:820px;margin:0 auto;padding:0 52px;position:relative;z-index:1}
+.kim blockquote{font-family:var(--serif);font-size:2rem;font-weight:400;line-height:1.38;color:#f0e8dc;margin-bottom:26px;text-wrap:balance}
+.kim-attr{display:flex;align-items:center;gap:12px}
+.kim-av{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-size:.64rem;color:rgba(240,232,220,.8);font-weight:600;border:1px solid rgba(255,255,255,.18)}
+.kim-cite{font-size:.63rem;letter-spacing:.11em;text-transform:uppercase;color:rgba(240,232,220,.42);font-weight:500}
+
+/* ── PROOF ── */
+.proof-coda{padding-top:36px;border-top:1px solid var(--border);margin-top:36px}
+.proof-coda p{font-family:var(--serif);font-style:italic;font-size:.98rem;line-height:1.7;color:var(--ink)}
+
+/* ── DARK CTA SECTION ── */
+.dk-cols{display:grid;grid-template-columns:1fr 1fr;gap:2px;max-width:820px;margin:0 auto}
+.dk-col{background:rgba(255,255,255,.05);padding:30px 34px;transition:background .3s}
+.dk-col:hover{background:rgba(255,255,255,.08)}
+.dk-label{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,232,220,.28);margin-bottom:16px;display:block;padding-bottom:11px;border-bottom:1px solid rgba(255,255,255,.07);font-weight:600}
+.dk-list{list-style:none}
+.dk-list li{font-size:.84rem;line-height:1.72;color:rgba(237,232,220,.65);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;gap:10px}
+.dk-list li:last-child{border-bottom:none}
+.dk-list li::before{content:"—";color:var(--peach-d);flex-shrink:0}
+.dk-fine{font-size:.76rem;color:rgba(237,232,220,.22);margin-bottom:22px}
+.dk-ambient{position:absolute;right:-60px;bottom:-40px;font-family:var(--serif);font-size:22rem;color:rgba(255,255,255,.025);line-height:1;user-select:none;pointer-events:none;letter-spacing:-.05em}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:44px 0}
+.ft-inner{display:flex;justify-content:space-between;align-items:center}
+.ft-logo{font-family:var(--serif);font-size:.9rem;color:rgba(237,232,220,.3)}
+.ft-links{display:flex;gap:22px}
+.ft-link{font-size:.62rem;letter-spacing:.06em;color:rgba(237,232,220,.2);text-decoration:none;font-weight:500;transition:color .2s}
+.ft-link:hover{color:rgba(237,232,220,.44)}
+
+/* ── GRAPHICS EXTRAS ── */
+.botanical-divider{display:flex;justify-content:center;padding:20px 0;opacity:.25}
+.peach-stripe::before{content:'';display:block;height:4px;background:linear-gradient(90deg,var(--peach) 0%,var(--peach-d) 35%,rgba(250,218,188,0) 100%)}
+
+/* section graphic floats */
+.sec-graphic{position:absolute;pointer-events:none;user-select:none}
+
+/* close */
+.close-center{text-align:center;max-width:520px;margin:0 auto}
+
+/* ── RESPONSIVE ── */
+@media(max-width:760px){
+  .wrap,.wrap-md,.wrap-sm{padding:0 20px}
+  h1{font-size:2rem} h2{font-size:1.4rem}
+  .sec{padding:60px 0}
+  .hero-grid{grid-template-columns:1fr;min-height:auto}
+  .hero-text{padding:60px 0 40px}
+  .hero-right{height:220px}
+  .split,.split-3,.faq-grid,.dk-cols,.obj-item{grid-template-columns:1fr;gap:28px}
+  .fy-grid{grid-template-columns:1fr}
+  .fy-item:nth-child(even){padding-left:0;border-left:none}
+  .nl{display:none}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:last-child{grid-column:span 2;border-right:none;border-top:1px solid var(--border)}
+  .ft-inner{flex-direction:column;gap:16px;text-align:center}
+  .kim blockquote{font-size:1.3rem}
+  .scard-content{padding:36px 24px}
+  .phase-number{font-size:4rem;top:28px;right:24px}
+  .tcard-quote{font-size:1.1rem}
+}
+</style>
+
+<!-- ══ NAV ══ -->
+<nav id="nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <div class="logo">Cindi Stickle<small>Nutrition</small></div>
+      <div class="nav-links">
+        <a href="#about" class="nl">About</a>
+        <a href="#method" class="nl">How it works</a>
+        <a href="#faq" class="nl">FAQ</a>
+        <a href="#" class="ncta">Book a free call</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="wrap" style="flex:1;display:flex;align-items:stretch">
+    <div class="hero-grid" style="flex:1;width:100%">
+      <div class="hero-text">
+        <div class="hero-text-inner">
+          <span class="hero-tag reveal">Personalized nutrition for women 40+ taking or considering a GLP-1</span>
+          <h1 class="reveal" style="transition-delay:.1s">You're doing more than ever to take care of your health.</h1>
+          <p class="hero-sub reveal" style="transition-delay:.18s">So why is your body responding like it doesn't know that? The exhaustion. The stall. The quiet fear that the weight you're losing might not be the right kind of weight.</p>
+          <p class="hero-kicker reveal" style="transition-delay:.24s">GLP-1s change the equation. Menopause changes the equation. Most advice doesn't account for both.</p>
+          <div class="reveal" style="transition-delay:.32s">
+            <a href="#" class="btn">Talk through what's going on →</a>
+            <span class="btn-sub">Free 1:1 call with me. No commitment.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: photo + botanical art -->
+      <div class="hero-right" style="position:relative;min-height:600px">
+        <!-- large botanical canvas behind photo area -->
+        <div class="hero-botanical-bg">
+          <canvas id="hero-canvas" style="width:100%;height:100%;display:block"></canvas>
+        </div>
+        <div class="hero-ph">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <span>Cindi lifestyle photo</span>
+          <span style="font-size:.52rem;opacity:.35">Full-height · warm natural light</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-wm" aria-hidden="true">feel.</div>
+
+  <!-- Credential badge -->
+  <div class="hero-badge" aria-hidden="true">
+    <svg viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="52" cy="52" r="50" stroke="#3c556c" stroke-width="1.5" fill="#f6ede0"/>
+      <circle cx="52" cy="52" r="42" stroke="#64726b" stroke-width=".7" stroke-dasharray="3 4"/>
+      <path id="bp" d="M52,52 m -34,0 a 34,34 0 1,1 68,0 a 34,34 0 1,1 -68,0" fill="none"/>
+      <text font-size="7.5" font-family="Helvetica Neue,Arial,sans-serif" font-weight="600" letter-spacing="2.4" fill="#64726b">
+        <textPath href="#bp">FUNCTIONAL NUTRITION · GLP-1 · MENOPAUSE ·</textPath>
+      </text>
+      <text x="52" y="48" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#3c556c" font-style="italic">Cindi</text>
+      <text x="52" y="62" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#3c556c" font-style="italic">Stickle</text>
+    </svg>
+  </div>
+
+  <!-- wave bottom -->
+  <div class="hero-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 52" preserveAspectRatio="none" style="display:block;width:100%;height:52px">
+      <path d="M0,26 C200,52 400,0 720,26 C1040,52 1240,0 1440,26 L1440,52 L0,52Z" fill="var(--paper)"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ══ TICKER ══ -->
+<div class="ticker-wrap">
+  <div class="ticker" aria-hidden="true">
+    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Functional Nutrition Practitioner</span></div>
+    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Certified Menopause Specialist</span></div>
+    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">GLP-1 user — personal &amp; clinical</span></div>
+    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">30 years navigating metabolic health</span></div>
+    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">12-week private coaching</span></div>
+    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">As seen in PR Newswire · Nutrition Insights · Citizen</span></div>
+    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Functional Nutrition Practitioner</span></div>
+    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Certified Menopause Specialist</span></div>
+    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">GLP-1 user — personal &amp; clinical</span></div>
+    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">30 years navigating metabolic health</span></div>
+    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">12-week private coaching</span></div>
+    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">As seen in PR Newswire · Nutrition Insights · Citizen</span></div>
+  </div>
+</div>
+
+<!-- ══ RECOGNITION ══ -->
+<section class="sec">
+  <div class="wrap-md reveal">
+    <h2>The hardest part isn't that you haven't tried. It's that you have.</h2>
+    <p>You're eating less. The scale still isn't moving like you expected. You're exercising more, wondering whether you're building strength or wearing yourself down. You're losing weight, but quietly worrying about how much of it could be muscle.</p>
+    <p>You've done the research. Followed the advice. Changed your food. Changed your workouts. Maybe even changed your dose. And you're still wondering: what am I missing?</p>
+    <p><strong>Most advice looks at one piece at a time. Your body doesn't experience those things separately. And neither should your plan.</strong></p>
+  </div>
+</section>
+
+<!-- botanical divider -->
+<div class="botanical-divider" aria-hidden="true">
+  <svg width="160" height="32" viewBox="0 0 160 32" fill="none" stroke="var(--sage)" stroke-width="1" stroke-linecap="round">
+    <path d="M80 30 L80 2"/>
+    <path d="M80 20 C68 14, 60 6, 64 0 C70 6, 78 16, 80 18"/>
+    <path d="M80 14 C92 8, 100 0, 96 -4 C90 2, 82 10, 80 12"/>
+    <line x1="30" y1="16" x2="62" y2="16" stroke-dasharray="3 4"/>
+    <line x1="98" y1="16" x2="130" y2="16" stroke-dasharray="3 4"/>
+    <circle cx="30" cy="16" r="2" fill="var(--sage)"/>
+    <circle cx="130" cy="16" r="2" fill="var(--sage)"/>
+  </svg>
+</div>
+
+<!-- ══ KIM QUOTE ══ -->
+<div class="kim reveal">
+  <div class="kim-mark" aria-hidden="true">"</div>
+  <div class="kim-inner">
+    <blockquote>I learned more from working with Cindi in her 12-week program than I did from the health coach my insurance company had me work with.</blockquote>
+    <div class="kim-attr">
+      <div class="kim-av">K</div>
+      <span class="kim-cite">Kim · 12-week client</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ IS THIS FOR YOU ══ -->
+<section class="sec sec-pale" style="padding:72px 0">
+  <div class="wrap-md">
+    <span class="eyebrow reveal">Is this for you?</span>
+    <h2 class="reveal" style="transition-delay:.06s">This may be exactly where you are.</h2>
+    <div class="fy-grid reveal" style="transition-delay:.12s">
+      <div class="fy-item"><span class="fy-arrow">→</span>You're doing the right things — protein, movement, medication — but progress has stalled and you can't figure out what's missing.</div>
+      <div class="fy-item"><span class="fy-arrow">→</span>You're losing weight on a GLP-1 but not sure whether you're protecting muscle, and your energy or strength doesn't feel right.</div>
+      <div class="fy-item"><span class="fy-arrow">→</span>GLP-1 appetite suppression is making it hard to eat enough, and you're not sure what adequate nutrition looks like at this stage.</div>
+      <div class="fy-item"><span class="fy-arrow">→</span>You're considering starting a GLP-1 and want a nutrition plan in place from the beginning — not figuring it out after the fact.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY CINDI ══ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="split-3">
+      <div>
+        <div class="photo-block reveal">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity:.28"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          Cindi headshot
+          <span style="font-size:.5rem;opacity:.3;margin-top:2px">Warm, natural lighting</span>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:.12s">
+        <span class="eyebrow">Why Cindi</span>
+        <h2>I didn't come to this work because GLP-1s became popular. I came to it through my own body.</h2>
+        <p>For nearly 30 years, I've lived with metabolic issues that forced me to pay attention. I had gestational diabetes. I've lived with Hashimoto's. I watched my A1C rise into the prediabetic range — despite knowing nutrition and doing everything I thought should work.</p>
+        <p>Then menopause entered the picture. Eventually, I started taking a GLP-1 myself. My A1C went from 5.9 to 5.4. My own experience made me even more curious about the question I now help women answer every day.</p>
+        <p style="font-family:var(--serif);font-style:italic;color:var(--ink)">"I'm doing the work. Why isn't this adding up?"</p>
+        <p>That's why I don't look at one isolated number or hand every woman the same plan.</p>
+        <div class="stats">
+          <div class="stat"><span class="stat-n">30 yrs</span><span class="stat-l">living this personally</span></div>
+          <div class="stat"><span class="stat-n">5.9→5.4</span><span class="stat-l">A1C on GLP-1</span></div>
+          <div class="stat"><span class="stat-n">12 wks</span><span class="stat-l">private coaching</span></div>
+        </div>
+        <div class="pills">
+          <span class="pill">Functional Nutrition Practitioner</span>
+          <span class="pill">Certified Menopause Specialist</span>
+          <span class="pill">GLP-1 user</span>
+        </div>
+        <div class="press-label">As seen in</div>
+        <div class="press-row">
+          <span class="press-name">PR Newswire</span>
+          <span class="press-name">Nutrition Insights</span>
+          <span class="press-name">Citizen</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REFRAME ══ -->
+<section class="sec sec-cream">
+  <div class="wrap">
+    <div class="split">
+      <div class="reveal">
+        <span class="eyebrow">What I see all the time</span>
+        <h2>Your body changed. The old rules didn't change with it.</h2>
+        <p>Your doctor manages your medication. Your trainer helps you get stronger. But when the scale stalls, energy crashes, or you wonder whether you're losing muscle — who is looking at how all of it interacts in your body?</p>
+        <div style="margin-top:26px">
+          <div class="diag-row"><span class="diag-q">"She's barely hungry, so she waits until late morning to eat."</span><span class="diag-v">Makes sense</span></div>
+          <div class="diag-row"><span class="diag-q">"She adds more exercise to protect muscle."</span><span class="diag-v">Also makes sense</span></div>
+          <div class="diag-row"><span class="diag-q">"Weight loss slows, so she assumes she needs to eat less."</span><span class="diag-v">Understandable</span></div>
+        </div>
+        <p style="margin-top:18px">Every decision makes sense on its own. But what if the better question is: <em>what am I already doing that isn't working the way I think it is?</em></p>
+      </div>
+      <div class="reveal" style="transition-delay:.15s;padding-top:48px">
+        <!-- decorative botanical -->
+        <div style="display:flex;justify-content:center;margin-bottom:24px;opacity:.2">
+          <svg width="56" height="96" viewBox="0 0 56 96" fill="none" stroke="var(--sage)" stroke-width="1.2" stroke-linecap="round">
+            <path d="M28 92 C28 92 28 48 28 4"/>
+            <path d="M28 68 C14 56 6 40 12 26 C18 38 26 58 28 66"/>
+            <path d="M28 50 C44 38 50 22 44 8 C36 22 29 42 28 48"/>
+            <path d="M28 32 C16 22 14 8 20 2 C24 12 27 24 28 30"/>
+          </svg>
+        </div>
+        <div class="callout">
+          <p>Most GLP-1 advice focuses on the medication.<br>Most menopause advice focuses on hormones.<br><br><em>I help you understand what happens when both are affecting the same body.</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FUTURE STATE ══ -->
+<section class="sec" style="padding:88px 0">
+  <div class="wrap-sm">
+    <div class="reveal" style="text-align:center;margin-bottom:26px">
+      <h2>What if you didn't have to second-guess every decision?</h2>
+      <div class="rule rule-c"></div>
+    </div>
+    <div class="imagine stagger">
+      <div class="imagine-item"><span class="imagine-idx">01</span>Imagine knowing how to feed your body even on the days when your appetite is low.</div>
+      <div class="imagine-item"><span class="imagine-idx">02</span>Imagine understanding what a slower week means, without immediately assuming you failed.</div>
+      <div class="imagine-item"><span class="imagine-idx">03</span>Imagine getting stronger while losing weight, instead of wondering what kind of weight you're losing.</div>
+      <div class="imagine-item"><span class="imagine-idx">04</span>And imagine feeling like yourself again. Clearer. Stronger. More confident in the decisions you're making for your health.</div>
+    </div>
+    <p class="reveal" style="font-family:var(--serif);font-style:italic;font-size:.96rem;color:var(--ink);margin-top:22px;text-align:center">Not because you found the perfect set of rules. Because you finally understand how the pieces fit together.</p>
+  </div>
+</section>
+
+<!-- ══ METHOD — STACKING CARDS ══ -->
+<section id="method" style="background:var(--cream)">
+  <div class="peach-stripe"></div>
+  <div class="wrap" style="padding-top:80px;padding-bottom:40px">
+    <div class="reveal" style="max-width:520px;margin-bottom:48px">
+      <span class="eyebrow">How we work together</span>
+      <h2>I don't start by handing you another list of rules. I start by figuring out what's actually happening.</h2>
+      <p>My private coaching is a personalized 12-week process. The framework gives us a direction. Your body determines the details.</p>
+    </div>
+  </div>
+
+  <!-- STACKING PHASE CARDS -->
+  <div id="phase-stack" style="padding-bottom:40px">
+
+    <div class="scard-spacer">
+      <div class="scard-inner sc-paper" id="pcard-0">
+        <div class="scard-content" style="position:relative;min-height:340px">
+          <div class="phase-number" aria-hidden="true">01</div>
+          <!-- botanical graphic -->
+          <div style="position:absolute;bottom:32px;right:32px;opacity:.1;pointer-events:none">
+            <svg width="100" height="160" viewBox="0 0 100 160" fill="none" stroke="var(--sage)" stroke-width="1.5" stroke-linecap="round">
+              <path d="M50 152 C50 80 50 8 50 8"/>
+              <path d="M50 120 C30 100 16 76 24 56 C34 74 48 102 50 118"/>
+              <path d="M50 88 C72 68 80 44 72 24 C62 44 51 70 50 86"/>
+              <path d="M50 56 C32 40 28 20 36 8 C42 22 49 42 50 54"/>
+            </svg>
+          </div>
+          <span class="phase-label-tag">Phase 1 · Regulate</span>
+          <h3 class="phase-title" style="font-size:1.3rem;margin-bottom:12px">Find what may be working against you.</h3>
+          <p class="phase-body" style="max-width:560px">Before we add more, we look at what may already be creating friction. Are you eating enough? What happens when your appetite disappears? Are your workouts and recovery actually supporting each other?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard-spacer">
+      <div class="scard-inner sc-cream" id="pcard-1">
+        <div class="scard-content" style="position:relative;min-height:340px">
+          <div class="phase-number" aria-hidden="true">02</div>
+          <div style="position:absolute;bottom:32px;right:32px;opacity:.12;pointer-events:none">
+            <svg width="100" height="160" viewBox="0 0 100 160" fill="none" stroke="var(--sage)" stroke-width="1.5" stroke-linecap="round">
+              <path d="M50 152 C50 80 50 8 50 8"/>
+              <path d="M50 100 C28 84 18 60 26 40 C36 58 48 84 50 98"/>
+              <path d="M50 68 C74 52 82 28 74 8 C62 28 51 54 50 66"/>
+            </svg>
+          </div>
+          <span class="phase-label-tag">Phase 2 · Rebuild</span>
+          <h3 class="phase-title" style="font-size:1.3rem;margin-bottom:12px">Eat to protect muscle, energy, and metabolism.</h3>
+          <p class="phase-body" style="max-width:560px">How to get enough protein when hunger cues are different. How to support and protect muscle as you lose weight. Not the theoretically perfect plan. Your plan.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard-spacer">
+      <div class="scard-inner sc-blue-soft" id="pcard-2" style="background:var(--sage-pale)">
+        <div class="scard-content" style="position:relative;min-height:340px">
+          <div class="phase-number" aria-hidden="true">03</div>
+          <div style="position:absolute;bottom:32px;right:32px;opacity:.14;pointer-events:none">
+            <svg width="100" height="160" viewBox="0 0 100 160" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round">
+              <path d="M50 152 C50 80 50 8 50 8"/>
+              <path d="M50 120 C30 100 16 76 24 56 C34 74 48 102 50 118"/>
+              <path d="M50 80 C72 60 80 36 72 16 C62 36 51 62 50 78"/>
+              <path d="M50 48 C32 34 28 14 36 4 C42 16 49 34 50 46"/>
+            </svg>
+          </div>
+          <span class="phase-label-tag">Phase 3 · Reinforce</span>
+          <h3 class="phase-title" style="font-size:1.3rem;margin-bottom:12px">Know what to do when your body or life changes.</h3>
+          <p class="phase-body" style="max-width:560px">The goal isn't for you to finish 12 weeks dependent on me. We turn what's working into routines you can maintain, so you know how to make decisions when life changes.</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /phase-stack -->
+
+  <div class="wrap" style="padding-bottom:80px">
+    <div class="reveal">
+      <a href="#" class="btn">See if this approach is right for you →</a>
+      <span class="btn-sub">Book a free 1:1 call with me.</span>
+    </div>
+  </div>
+</section>
+
+<!-- botanical divider -->
+<div class="botanical-divider" aria-hidden="true" style="padding:32px 0">
+  <svg width="200" height="28" viewBox="0 0 200 28" fill="none" stroke="var(--sage)" stroke-width="1" stroke-linecap="round">
+    <line x1="0" y1="14" x2="78" y2="14" stroke-dasharray="2 5"/>
+    <path d="M100 26 C100 14 100 2 100 2"/>
+    <path d="M100 18 C92 12 88 6 91 2 C95 6 99 14 100 16"/>
+    <path d="M100 12 C108 6 112 0 109 -2 C105 2 101 8 100 10"/>
+    <line x1="122" y1="14" x2="200" y2="14" stroke-dasharray="2 5"/>
+    <circle cx="0" cy="14" r="1.5" fill="var(--sage)"/>
+    <circle cx="200" cy="14" r="1.5" fill="var(--sage)"/>
+  </svg>
+</div>
+
+<!-- ══ PROOF — STACKING TESTIMONIAL CARDS ══ -->
+<section class="sec" style="padding-top:32px">
+  <div class="wrap">
+    <div class="reveal" style="max-width:540px;margin-bottom:48px">
+      <h2>What changes when the pieces finally start working together.</h2>
+      <p>Knowing what to do is one thing. Making it work in your actual life is another.</p>
+    </div>
+  </div>
+
+  <div id="tcard-stack">
+
+    <div class="scard-spacer">
+      <div class="scard-inner sc-cream" id="tcard-0">
+        <div class="scard-content">
+          <!-- big decorative quote mark -->
+          <div style="font-family:var(--serif);font-size:7rem;line-height:.7;color:var(--peach);margin-bottom:8px;user-select:none" aria-hidden="true">"</div>
+          <p class="tcard-quote">"I've always known what I needed to do to lead a healthier lifestyle, but actually putting that knowledge into practice was a different story. Through Cindi's guidance and support, I found the accountability I needed to stay on track."</p>
+          <div class="tcard-attr">
+            <div class="tcard-av tcard-av-sage">JE</div>
+            <div><span class="tcard-name">Jessica</span><span class="tcard-role">12-week client</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard-spacer">
+      <div class="scard-inner sc-paper" id="tcard-1">
+        <div class="scard-content">
+          <div style="font-family:var(--serif);font-size:7rem;line-height:.7;color:var(--sage-pale);margin-bottom:8px;user-select:none" aria-hidden="true">"</div>
+          <p class="tcard-quote">"Two months ago I was questioning whether I even wanted to continue. Now my brain is working better. It's actually allowing me to do what I know I'm capable of doing. I'm starting to feel like myself again."</p>
+          <div class="tcard-attr">
+            <div class="tcard-av tcard-av-blue">MO</div>
+            <div><span class="tcard-name">Molly</span><span class="tcard-role">12-week client</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard-spacer">
+      <div class="scard-inner sc-dark" id="tcard-2">
+        <div class="scard-content" style="position:relative;overflow:hidden">
+          <!-- ambient letter -->
+          <div style="position:absolute;right:-20px;bottom:-40px;font-family:var(--serif);font-size:16rem;color:rgba(255,255,255,.04);line-height:1;user-select:none;pointer-events:none">"</div>
+          <div style="position:relative;z-index:1">
+            <div style="font-family:var(--serif);font-size:7rem;line-height:.7;color:rgba(250,218,188,.25);margin-bottom:8px;user-select:none" aria-hidden="true">"</div>
+            <p class="tcard-quote" style="color:#ede8dc">"Since then, I have lost 6 lbs, lost inches, and lowered my BMI. My dietitian and wellness doctor are very impressed, and we are all on the same page with the process."</p>
+            <div class="tcard-attr">
+              <div class="tcard-av" style="background:rgba(255,255,255,.14);color:#f0e8dc;border:1px solid rgba(255,255,255,.18)">M</div>
+              <div><span class="tcard-name" style="color:#ede8dc">Maritza</span><span class="tcard-role" style="color:rgba(237,232,220,.38)">12-week client</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tcard-stack -->
+
+  <div class="wrap" style="padding-top:24px">
+    <div class="proof-coda reveal">
+      <p>You may need someone to look at what you're already doing and help you see what isn't adding up.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OBJECTIONS ══ -->
+<section class="sec sec-cream">
+  <div class="wrap">
+    <span class="eyebrow reveal">If you're wondering…</span>
+    <div>
+      <div class="obj-item reveal"><p class="obj-q">"Maybe I just need to give the medication more time."</p><p class="obj-a">Maybe. A slower week doesn't mean something is wrong. But waiting alone won't tell you whether you're eating enough, supporting muscle, or missing something in the bigger picture.</p></div>
+      <div class="obj-item reveal" style="transition-delay:.08s"><p class="obj-q">"My doctor already monitors me."</p><p class="obj-a">Good. My work doesn't replace your physician. I help with what happens between appointments: nutrition, eating with lower appetite, muscle support, movement, and recovery.</p></div>
+      <div class="obj-item reveal" style="transition-delay:.16s"><p class="obj-q">"I already know what I should be doing."</p><p class="obj-a">You may know a lot. But knowing protein matters is different from figuring out how to eat enough when you're rarely hungry. Sometimes you don't need more information — you need a different lens.</p></div>
+      <div class="obj-item reveal" style="transition-delay:.24s"><p class="obj-q">"I don't want another restrictive program."</p><p class="obj-a">Neither do I. I'm not here to give you another list of foods you can never eat again. We look at what you already eat and what changes make sense for your actual life.</p></div>
+    </div>
+    <div class="reveal" style="margin-top:44px">
+      <a href="#" class="btn">Talk it through with Cindi →</a>
+      <span class="btn-sub">Book a free 1:1 call. No commitment.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FREE CALL (DARK) ══ -->
+<section class="sec sec-dark" style="padding:96px 0">
+  <div class="dk-ambient" aria-hidden="true">free.</div>
+  <!-- botanical in corner -->
+  <div style="position:absolute;left:40px;top:50%;transform:translateY(-50%);opacity:.06;pointer-events:none" aria-hidden="true">
+    <svg width="80" height="140" viewBox="0 0 80 140" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round">
+      <path d="M40 132 C40 70 40 8 40 8"/>
+      <path d="M40 104 C20 86 8 62 16 44 C26 62 38 88 40 102"/>
+      <path d="M40 74 C62 56 70 32 62 12 C52 32 41 58 40 72"/>
+      <path d="M40 48 C22 34 18 14 26 4 C32 16 39 34 40 46"/>
+    </svg>
+  </div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto 52px">
+      <span class="eyebrow" style="color:var(--peach)">The free call</span>
+      <h2 style="color:#ede8dc">You don't have to figure out what's wrong before we talk. That's the point of the call.</h2>
+      <p style="color:rgba(237,232,220,.55)">We'll look at what's been happening, what you've already tried, and where the disconnect may be. If I think I can help, I'll explain what working together could look like.</p>
+    </div>
+    <div class="dk-cols reveal" style="transition-delay:.1s">
+      <div class="dk-col">
+        <span class="dk-label">Bring any of this</span>
+        <ul class="dk-list">
+          <li>Why your progress has slowed or stalled</li>
+          <li>Whether you're eating enough on a GLP-1</li>
+          <li>Concerns about losing muscle while losing weight</li>
+          <li>Why you're exhausted despite doing everything right</li>
+        </ul>
+      </div>
+      <div class="dk-col">
+        <span class="dk-label">Or bring this</span>
+        <ul class="dk-list">
+          <li>What changed when perimenopause entered the picture</li>
+          <li>Questions about GLP-1 before you start one</li>
+          <li>A plan that stopped working and you don't know why</li>
+          <li>The feeling that something is off but you can't name it</li>
+        </ul>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:48px;transition-delay:.2s">
+      <p class="dk-fine">If I think I can help, I'll explain what working together looks like. If not, I'll tell you that too.</p>
+      <a href="#" class="btn btn-ghost">Book my free 1:1 call →</a>
+      <span class="btn-sub" style="color:rgba(237,232,220,.28)">Free 1:1 conversation. Choose a time that works for you.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CLOSE ══ -->
+<section class="sec" style="padding:96px 0">
+  <div class="close-center wrap-sm">
+    <div style="display:flex;justify-content:center;margin-bottom:26px;opacity:.22">
+      <svg width="32" height="52" viewBox="0 0 32 52" fill="none" stroke="var(--sage)" stroke-width="1" stroke-linecap="round">
+        <path d="M16 48 C16 28 16 8 16 4"/>
+        <path d="M16 34 C7 26 4 16 7 8 C11 16 15 28 16 32"/>
+        <path d="M16 20 C25 12 28 4 25 0 C21 6 17 16 16 18"/>
+      </svg>
+    </div>
+    <h2 class="reveal" style="text-align:center">You've spent enough time wondering whether the answer is to try harder.</h2>
+    <div class="rule rule-c reveal" style="transition-delay:.08s"></div>
+    <p class="reveal" style="text-align:center;transition-delay:.14s">Your body has changed. Your health history matters. Menopause matters. The medication matters. Your nutrition, muscle, recovery, and stress all matter.</p>
+    <p class="reveal" style="font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--ink);text-align:center;margin-bottom:32px;transition-delay:.2s">When those pieces work together, everything changes. You don't have to connect them alone.</p>
+    <div class="reveal" style="text-align:center;transition-delay:.26s">
+      <a href="#" class="btn">Book my free 1:1 call with Cindi →</a>
+      <span class="btn-sub">No commitment. No pitch. Just an honest conversation.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="sec sec-cream" id="faq">
+  <div class="wrap">
+    <span class="eyebrow reveal">Before we talk</span>
+    <h2 class="reveal" style="max-width:380px;transition-delay:.06s">A few things you may want to know.</h2>
+    <div class="faq-grid reveal" style="transition-delay:.12s">
+      <div>
+        <div class="faq-item"><p class="faq-q">Is the call really free?</p><p class="faq-a">Yes. It's a free 1:1 conversation with me. We'll talk about what's happening, what you've tried, and where you feel stuck. If I think I can help, I'll explain what working together looks like. If not, I'll be honest about that too.</p></div>
+        <div class="faq-item"><p class="faq-q">Do I need to already be taking a GLP-1?</p><p class="faq-a">No. I work with women who are already on one and women who are considering it. The nutrition, muscle, and lifestyle pieces matter both before and during the process.</p></div>
+        <div class="faq-item"><p class="faq-q">How do I know if this is right for me?</p><p class="faq-a">You don't have to know yet. That's what the call is for.</p></div>
+      </div>
+      <div>
+        <div class="faq-item"><p class="faq-q">How long is the call and what happens on it?</p><p class="faq-a">About 30 minutes. We'll talk about where you are, what you've tried, and what feels stuck. You can ask me anything. There's no pressure to make a decision on the call.</p></div>
+        <div class="faq-item"><p class="faq-q">What does the 12-week program actually involve?</p><p class="faq-a">Weekly 1:1 sessions with me, a personalized nutrition and lifestyle plan built around your body and goals, and ongoing support as we adjust. It's private, not a group program.</p></div>
+        <div class="faq-item" style="border-bottom:1px solid var(--border);padding-bottom:18px">
+          <a href="#" class="btn" style="margin-top:4px">Book my free call →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="wrap">
+    <div class="ft-inner">
+      <div class="ft-logo">Cindi Stickle Nutrition</div>
+      <div class="ft-links">
+        <a href="#about" class="ft-link">About</a>
+        <a href="#method" class="ft-link">How it works</a>
+        <a href="#faq" class="ft-link">FAQ</a>
+        <a href="#" class="ft-link">Book a call</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAV SCROLL ──
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
+
+// ── REVEAL OBSERVER ──
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    if (e.target.classList.contains('stagger')) {
+      Array.from(e.target.children).forEach((c, i) => setTimeout(() => c.classList.add('in'), i * 120));
+    } else {
+      e.target.classList.add('in');
+    }
+    io.unobserve(e.target);
+  });
+}, {threshold: 0.1});
+document.querySelectorAll('.reveal, .stagger').forEach(el => io.observe(el));
+
+// ── STACKING CARDS ──
+function initStack(containerSelector, cardIds) {
+  const cards = cardIds.map(id => document.getElementById(id));
+  if (!cards.length || cards.some(c => !c)) return;
+
+  function update() {
+    const navH = 68;
+    cards.forEach((card, i) => {
+      const rect = card.getBoundingClientRect();
+      const cardTop = rect.top;
+
+      // How far has this card been "buried" by the next one?
+      let progress = 0;
+      if (i < cards.length - 1) {
+        const nextRect = cards[i + 1].getBoundingClientRect();
+        const overlap = navH + 16 + 8 - nextRect.top; // how much next card overlaps
+        progress = Math.max(0, Math.min(1, overlap / 180));
+      }
+
+      const scale = 1 - progress * 0.045;
+      const brightness = 1 - progress * 0.12;
+      card.style.transform = `scale(${scale})`;
+      card.style.filter = `brightness(${brightness})`;
+    });
+  }
+
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+}
+
+initStack('#phase-stack', ['pcard-0','pcard-1','pcard-2']);
+initStack('#tcard-stack', ['tcard-0','tcard-1','tcard-2']);
+
+// ── HERO BOTANICAL CANVAS ──
+(function() {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  const parent = canvas.parentElement;
+
+  function resize() {
+    canvas.width = parent.offsetWidth;
+    canvas.height = parent.offsetHeight;
+    draw();
+  }
+
+  function draw() {
+    const ctx = canvas.getContext('2d');
+    const w = canvas.width, h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+
+    // sage-pale base tint already on parent, just draw plants
+    ctx.strokeStyle = 'rgba(100,114,107,0.18)';
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+
+    // Multiple botanical stems scattered across panel
+    const plants = [
+      {x: w*0.72, y: h, scale: 1.3, rot: 0.05},
+      {x: w*0.25, y: h*0.95, scale: 0.75, rot: -0.08},
+      {x: w*0.88, y: h*0.8, scale: 0.55, rot: 0.12},
+      {x: w*0.15, y: h*0.5, scale: 0.45, rot: -0.05},
+    ];
+
+    plants.forEach(({x, y, scale, rot}) => {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rot);
+      ctx.lineWidth = 1.2 * scale;
+
+      const h2 = 180 * scale;
+
+      // main stem
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(0, -h2);
+      ctx.stroke();
+
+      // left leaf 1
+      ctx.beginPath();
+      ctx.moveTo(0, -h2 * 0.72);
+      ctx.bezierCurveTo(-30*scale, -h2*0.82, -50*scale, -h2*0.65, -20*scale, -h2*0.52);
+      ctx.bezierCurveTo(-10*scale, -h2*0.56, 0, -h2*0.64, 0, -h2*0.72);
+      ctx.stroke();
+
+      // right leaf 1
+      ctx.beginPath();
+      ctx.moveTo(0, -h2 * 0.5);
+      ctx.bezierCurveTo(32*scale, -h2*0.6, 52*scale, -h2*0.44, 22*scale, -h2*0.32);
+      ctx.bezierCurveTo(10*scale, -h2*0.36, 0, -h2*0.44, 0, -h2*0.5);
+      ctx.stroke();
+
+      // left leaf 2 (upper)
+      ctx.beginPath();
+      ctx.moveTo(0, -h2 * 0.85);
+      ctx.bezierCurveTo(-22*scale, -h2*0.94, -36*scale, -h2*0.82, -14*scale, -h2*0.72);
+      ctx.bezierCurveTo(-7*scale, -h2*0.75, 0, -h2*0.8, 0, -h2*0.85);
+      ctx.stroke();
+
+      // right leaf 2 (upper)
+      ctx.beginPath();
+      ctx.moveTo(0, -h2 * 0.95);
+      ctx.bezierCurveTo(20*scale, -h2*1.04, 34*scale, -h2*0.92, 12*scale, -h2*0.82);
+      ctx.bezierCurveTo(5*scale, -h2*0.85, 0, -h2*0.9, 0, -h2*0.95);
+      ctx.stroke();
+
+      ctx.restore();
+    });
+
+    // small scattered dots / seeds
+    ctx.fillStyle = 'rgba(100,114,107,0.12)';
+    const dots = [{x:w*.4,y:h*.3},{x:w*.6,y:h*.6},{x:w*.8,y:h*.2},{x:w*.1,y:h*.7},{x:w*.55,y:h*.15}];
+    dots.forEach(d => {
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, 2.5, 0, Math.PI*2);
+      ctx.fill();
+    });
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+})();
+</script>
