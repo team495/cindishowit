@@ -114,9 +114,9 @@ nav.scrolled{box-shadow:0 2px 28px rgba(44,60,50,.08)}
 .ticker{display:flex;width:max-content;animation:tick 26s linear infinite}
 .ticker:hover{animation-play-state:paused}
 @keyframes tick{to{transform:translateX(-50%)}}
-.tick-item{display:flex;align-items:center;gap:8px;padding:12px 26px;white-space:nowrap;flex-shrink:0}
+.tick-item{display:flex;align-items:center;gap:12px;padding:16px 36px;white-space:nowrap;flex-shrink:0}
 .tick-dot{width:4px;height:4px;background:var(--sage);border-radius:50%;flex-shrink:0;opacity:.55}
-.tick-text{font-size:.64rem;letter-spacing:.07em;color:var(--ink-m);font-weight:500;text-transform:uppercase}
+.tick-text{font-size:15px;letter-spacing:.1em;color:#555;font-weight:600;text-transform:uppercase}
 
 /* ── STACKING CARDS ── */
 .stack-outer{
@@ -278,12 +278,12 @@ nav.scrolled{box-shadow:0 2px 28px rgba(44,60,50,.08)}
 .dk-cols{display:grid;grid-template-columns:1fr 1fr;gap:2px;max-width:820px;margin:0 auto}
 .dk-col{background:rgba(255,255,255,.05);padding:30px 34px;transition:background .3s}
 .dk-col:hover{background:rgba(255,255,255,.08)}
-.dk-label{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,232,220,.28);margin-bottom:16px;display:block;padding-bottom:11px;border-bottom:1px solid rgba(255,255,255,.07);font-weight:600}
+.dk-label{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:16px;display:block;padding-bottom:11px;border-bottom:1px solid rgba(255,255,255,.2);font-weight:700}
 .dk-list{list-style:none}
-.dk-list li{font-size:.84rem;line-height:1.72;color:rgba(237,232,220,.65);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;gap:10px}
+.dk-list li{font-size:18px;line-height:1.72;color:#fff;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);display:flex;gap:12px}
 .dk-list li:last-child{border-bottom:none}
-.dk-list li::before{content:"—";color:var(--peach-d);flex-shrink:0}
-.dk-fine{font-size:.76rem;color:rgba(237,232,220,.22);margin-bottom:22px}
+.dk-list li::before{content:"—";color:var(--peach);flex-shrink:0}
+.dk-fine{font-size:16px;color:rgba(255,255,255,.75);margin-bottom:28px}
 .dk-ambient{position:absolute;right:-60px;bottom:-40px;font-family:var(--serif);font-size:22rem;color:rgba(255,255,255,.025);line-height:1;user-select:none;pointer-events:none;letter-spacing:-.05em}
 
 /* ── FOOTER ── */
@@ -549,19 +549,20 @@ footer{background:var(--ink);padding:44px 0}
 </section>
 
 <!-- ══ FUTURE STATE ══ -->
-<section class="sec" style="padding:88px 0">
-  <div class="wrap-sm">
-    <div class="reveal" style="text-align:center;margin-bottom:26px">
-      <h2>What if you didn't have to second-guess every decision?</h2>
-      <div class="rule rule-c"></div>
+<section class="sec" style="padding:100px 0">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:56px">
+      <span class="eyebrow">Imagine this</span>
+      <h2 style="max-width:700px;margin:0 auto">What if you didn't have to<br>second-guess every decision?</h2>
+      <div class="rule rule-c" style="margin-top:28px"></div>
     </div>
-    <div class="imagine stagger">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 80px;border-top:1px solid var(--border)" class="stagger">
       <div class="imagine-item"><span class="imagine-idx">01</span>Imagine knowing how to feed your body even on the days when your appetite is low.</div>
       <div class="imagine-item"><span class="imagine-idx">02</span>Imagine understanding what a slower week means, without immediately assuming you failed.</div>
       <div class="imagine-item"><span class="imagine-idx">03</span>Imagine getting stronger while losing weight, instead of wondering what kind of weight you're losing.</div>
       <div class="imagine-item"><span class="imagine-idx">04</span>And imagine feeling like yourself again. Clearer. Stronger. More confident in the decisions you're making for your health.</div>
     </div>
-    <p class="reveal" style="font-family:var(--serif);font-style:italic;font-size:22px;color:#000;margin-top:22px;text-align:center">Not because you found the perfect set of rules. Because you finally understand how the pieces fit together.</p>
+    <p class="reveal" style="font-family:var(--serif);font-style:italic;font-size:24px;color:#000;margin-top:48px;text-align:center;max-width:800px;margin-left:auto;margin-right:auto">Not because you found the perfect set of rules. Because you finally understand how the pieces fit together.</p>
   </div>
 </section>
 
@@ -662,9 +663,10 @@ footer{background:var(--ink);padding:44px 0}
 <!-- ══ PROOF — STACKING TESTIMONIAL CARDS ══ -->
 <section class="sec" style="padding-top:32px">
   <div class="wrap">
-    <div class="reveal" style="max-width:540px;margin-bottom:48px">
-      <h2>What changes when the pieces finally start working together.</h2>
-      <p>Knowing what to do is one thing. Making it work in your actual life is another.</p>
+    <div class="reveal" style="text-align:center;margin-bottom:56px">
+      <span class="eyebrow">Real results</span>
+      <h2 style="max-width:760px;margin:0 auto">What changes when the pieces<br>finally start working together.</h2>
+      <p style="max-width:600px;margin:20px auto 0;color:#555">Knowing what to do is one thing. Making it work in your actual life is another.</p>
     </div>
   </div>
 
@@ -733,9 +735,9 @@ footer{background:var(--ink);padding:44px 0}
       <div class="obj-item reveal" style="transition-delay:.16s"><p class="obj-q">"I already know what I should be doing."</p><p class="obj-a">You may know a lot. But knowing protein matters is different from figuring out how to eat enough when you're rarely hungry. Sometimes you don't need more information — you need a different lens.</p></div>
       <div class="obj-item reveal" style="transition-delay:.24s"><p class="obj-q">"I don't want another restrictive program."</p><p class="obj-a">Neither do I. I'm not here to give you another list of foods you can never eat again. We look at what you already eat and what changes make sense for your actual life.</p></div>
     </div>
-    <div class="reveal" style="margin-top:44px">
-      <a href="#" class="btn">Talk it through with Cindi →</a>
-      <span class="btn-sub">Book a free 1:1 call. No commitment.</span>
+    <div class="reveal" style="margin-top:56px;text-align:center">
+      <a href="#" class="btn" style="font-size:15px;padding:18px 48px;letter-spacing:.12em">Talk it through with Cindi →</a>
+      <span class="btn-sub" style="text-align:center;margin-top:14px;font-size:15px;color:#666">Book a free 1:1 call. No commitment.</span>
     </div>
   </div>
 </section>
@@ -755,8 +757,8 @@ footer{background:var(--ink);padding:44px 0}
   <div class="wrap" style="position:relative;z-index:1">
     <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto 52px">
       <span class="eyebrow" style="color:var(--peach)">The free call</span>
-      <h2 style="color:#ede8dc">You don't have to figure out what's wrong before we talk. That's the point of the call.</h2>
-      <p style="color:rgba(237,232,220,.55)">We'll look at what's been happening, what you've already tried, and where the disconnect may be. If I think I can help, I'll explain what working together could look like.</p>
+      <h2 style="color:#fff">You don't have to figure out what's wrong before we talk. That's the point of the call.</h2>
+      <p style="color:#fff">We'll look at what's been happening, what you've already tried, and where the disconnect may be. If I think I can help, I'll explain what working together could look like.</p>
     </div>
     <div class="dk-cols reveal" style="transition-delay:.1s">
       <div class="dk-col">
@@ -780,8 +782,8 @@ footer{background:var(--ink);padding:44px 0}
     </div>
     <div class="reveal" style="text-align:center;margin-top:48px;transition-delay:.2s">
       <p class="dk-fine">If I think I can help, I'll explain what working together looks like. If not, I'll tell you that too.</p>
-      <a href="#" class="btn btn-ghost">Book my free 1:1 call →</a>
-      <span class="btn-sub" style="color:rgba(237,232,220,.28)">Free 1:1 conversation. Choose a time that works for you.</span>
+      <a href="#" class="btn btn-ghost" style="font-size:15px;padding:18px 48px;letter-spacing:.12em">Book my free 1:1 call →</a>
+      <span class="btn-sub" style="color:rgba(255,255,255,.7);text-align:center;margin-top:14px;font-size:15px;display:block">Free 1:1 conversation. Choose a time that works for you.</span>
     </div>
   </div>
 </section>
@@ -801,8 +803,8 @@ footer{background:var(--ink);padding:44px 0}
     <p class="reveal" style="text-align:center;transition-delay:.14s">Your body has changed. Your health history matters. Menopause matters. The medication matters. Your nutrition, muscle, recovery, and stress all matter.</p>
     <p class="reveal" style="font-family:var(--serif);font-style:italic;font-size:22px;color:#000;text-align:center;margin-bottom:32px;transition-delay:.2s">When those pieces work together, everything changes. You don't have to connect them alone.</p>
     <div class="reveal" style="text-align:center;transition-delay:.26s">
-      <a href="#" class="btn">Book my free 1:1 call with Cindi →</a>
-      <span class="btn-sub">No commitment. No pitch. Just an honest conversation.</span>
+      <a href="#" class="btn" style="font-size:15px;padding:18px 48px;letter-spacing:.12em">Book my free 1:1 call with Cindi →</a>
+      <span class="btn-sub" style="text-align:center;margin-top:14px;font-size:15px;color:#666;display:block">No commitment. No pitch. Just an honest conversation.</span>
     </div>
   </div>
 </section>
