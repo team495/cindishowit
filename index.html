@@ -517,7 +517,8 @@ footer{background:var(--ink);padding:44px 0}
 <section class="sec sec-cream">
   <div class="wrap">
     <div class="split">
-      <div class="reveal">
+      <!-- LEFT: all text + callout -->
+      <div class="reveal" style="display:flex;flex-direction:column;justify-content:center;padding:60px 0">
         <span class="eyebrow">What I see all the time</span>
         <h2>Your body changed. The old rules didn't change with it.</h2>
         <p>Your doctor manages your medication. Your trainer helps you get stronger. But when the scale stalls, energy crashes, or you wonder whether you're losing muscle — who is looking at how all of it interacts in your body?</p>
@@ -527,32 +528,26 @@ footer{background:var(--ink);padding:44px 0}
           <div class="diag-row"><span class="diag-q">"Weight loss slows, so she assumes she needs to eat less."</span><span class="diag-v">Understandable</span></div>
         </div>
         <p style="margin-top:18px">Every decision makes sense on its own. But what if the better question is: <em>what am I already doing that isn't working the way I think it is?</em></p>
-      </div>
-      <div class="reveal" style="transition-delay:.15s">
-        <!-- Photo + callout -->
-        <div style="position:relative;margin-bottom:28px">
-          <!-- Image frame -->
-          <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:#d2e0e8">
-            <canvas id="about-canvas" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
-            <!-- Placeholder overlay — replace src with real photo -->
-            <img id="about-photo" src="" alt="Cindi Stickle" onerror="this.style.display='none'"
-              style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top">
-            <!-- visible only while no real photo is set -->
-            <div id="about-photo-placeholder" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:28px;background:linear-gradient(to top,rgba(60,85,108,.55) 0%,transparent 50%)">
-              <span style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:600">Add your photo here</span>
-            </div>
-          </div>
-          <!-- decorative corner tag -->
-          <div style="position:absolute;top:-14px;right:-14px;width:56px;height:56px;border-radius:50%;background:var(--peach);display:flex;align-items:center;justify-content:center">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue-d)" stroke-width="1.5" stroke-linecap="round">
-              <path d="M12 2 C12 2 12 11 12 22"/>
-              <path d="M12 16 C6 11 4 5 8 1 C10 7 11.5 14 12 16"/>
-              <path d="M12 10 C18 5 20 0 16 -2 C14 4 12.5 8 12 10"/>
-            </svg>
-          </div>
-        </div>
-        <div class="callout">
+        <div class="callout" style="margin-top:32px">
           <p>Most GLP-1 advice focuses on the medication.<br>Most menopause advice focuses on hormones.<br><br><em>I help you understand what happens when both are affecting the same body.</em></p>
+        </div>
+      </div>
+
+      <!-- RIGHT: image only, full height -->
+      <div class="reveal" style="transition-delay:.15s;position:relative;min-height:600px;border-radius:6px;overflow:hidden;background:#d2e0e8">
+        <canvas id="about-canvas" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+        <img id="about-photo" src="" alt="Cindi Stickle" onerror="this.style.display='none'"
+          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;z-index:2">
+        <div style="position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding:32px;z-index:3">
+          <span style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:600">Add photo here</span>
+        </div>
+        <!-- peach badge -->
+        <div style="position:absolute;top:24px;right:24px;width:52px;height:52px;border-radius:50%;background:var(--peach);display:flex;align-items:center;justify-content:center;z-index:4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue-d)" stroke-width="1.5" stroke-linecap="round">
+            <path d="M12 2 C12 2 12 11 12 22"/>
+            <path d="M12 16 C6 11 4 5 8 1 C10 7 11.5 14 12 16"/>
+            <path d="M12 10 C18 5 20 0 16 -2 C14 4 12.5 8 12 10"/>
+          </svg>
         </div>
       </div>
     </div>
