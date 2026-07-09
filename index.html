@@ -86,13 +86,14 @@ nav.scrolled{box-shadow:0 2px 28px rgba(44,60,50,.08)}
 
 /* ── HERO ── */
 .hero{background:var(--cream);position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column}
-.hero-grid{display:grid;grid-template-columns:1fr 520px;flex:1}
-.hero-text{display:flex;align-items:center;padding:100px 80px 100px 0;position:relative;z-index:2}
-.hero-text-inner{max-width:680px}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);padding:9px 18px;font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:#000;margin-bottom:32px;font-weight:500}
-.hero-tag::before{content:'';width:7px;height:7px;background:var(--sage);border-radius:50%;flex-shrink:0}
-.hero-sub{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.6;color:#000;margin-bottom:18px}
-.hero-kicker{font-size:22px;line-height:1.6;color:#000;margin-bottom:40px}
+.hero-grid{display:grid;grid-template-columns:1fr 48%;flex:1;min-height:100vh}
+.hero-text{display:flex;align-items:center;padding:120px 80px 120px 80px;position:relative;z-index:2}
+.hero-text-inner{max-width:700px}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;background:rgba(100,114,107,.1);padding:10px 20px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:36px;font-weight:700;border-radius:2px}
+.hero-tag::before{content:'';width:6px;height:6px;background:var(--sage);border-radius:50%;flex-shrink:0}
+.hero-h1{font-family:var(--serif);font-size:72px;font-weight:700;line-height:1.0;color:#000;margin-bottom:28px;text-transform:uppercase;letter-spacing:-.01em;text-wrap:balance}
+.hero-sub{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.65;color:#333;margin-bottom:16px}
+.hero-kicker{font-size:20px;line-height:1.65;color:#444;margin-bottom:44px}
 
 /* hero right panel */
 .hero-right{position:relative;background:var(--sage-pale);overflow:hidden}
@@ -342,57 +343,56 @@ footer{background:var(--ink);padding:44px 0}
 
 <!-- ══ HERO ══ -->
 <section class="hero">
-  <div class="wrap" style="flex:1;display:flex;align-items:stretch">
-    <div class="hero-grid" style="flex:1;width:100%">
-      <div class="hero-text">
-        <div class="hero-text-inner">
-          <span class="hero-tag reveal">Personalized nutrition for women 40+ taking or considering a GLP-1</span>
-          <h1 class="reveal" style="transition-delay:.1s">You're doing more than ever to take care of your health.</h1>
-          <p class="hero-sub reveal" style="transition-delay:.18s">So why is your body responding like it doesn't know that? The exhaustion. The stall. The quiet fear that the weight you're losing might not be the right kind of weight.</p>
-          <p class="hero-kicker reveal" style="transition-delay:.24s">GLP-1s change the equation. Menopause changes the equation. Most advice doesn't account for both.</p>
-          <div class="reveal" style="transition-delay:.32s">
-            <a href="#" class="btn">Talk through what's going on →</a>
-            <span class="btn-sub">Free 1:1 call with me. No commitment.</span>
-          </div>
+  <div class="hero-grid">
+    <!-- LEFT: text -->
+    <div class="hero-text">
+      <div class="hero-text-inner">
+        <span class="hero-tag reveal">Personalized nutrition · Women 40+ · GLP-1 &amp; Menopause</span>
+        <h1 class="hero-h1 reveal" style="transition-delay:.1s">You're doing more than ever to take care of your health.</h1>
+        <p class="hero-sub reveal" style="transition-delay:.18s">So why is your body responding like it doesn't know that? The exhaustion. The stall. The quiet fear that the weight you're losing might not be the right kind.</p>
+        <p class="hero-kicker reveal" style="transition-delay:.24s">GLP-1s change the equation. Menopause changes the equation. Most advice doesn't account for both.</p>
+        <div class="reveal" style="transition-delay:.32s;display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+          <a href="#" class="btn" style="font-size:14px;padding:16px 36px;letter-spacing:.12em">Talk through what's going on →</a>
+          <span style="font-size:14px;color:#666;font-style:italic">Free 1:1 call · No commitment</span>
         </div>
-      </div>
-
-      <!-- RIGHT: photo + botanical art -->
-      <div class="hero-right" style="position:relative;min-height:600px">
-        <!-- large botanical canvas behind photo area -->
-        <div class="hero-botanical-bg">
-          <canvas id="hero-canvas" style="width:100%;height:100%;display:block"></canvas>
-        </div>
-        <div class="hero-ph">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span>Cindi lifestyle photo</span>
-          <span style="font-size:.52rem;opacity:.35">Full-height · warm natural light</span>
+        <!-- credential pills -->
+        <div class="reveal" style="transition-delay:.4s;display:flex;gap:12px;flex-wrap:wrap;margin-top:44px;padding-top:32px;border-top:1px solid var(--border)">
+          <span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);font-weight:600">Functional Nutrition Practitioner</span>
+          <span style="color:var(--border)">·</span>
+          <span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);font-weight:600">Menopause Specialist</span>
+          <span style="color:var(--border)">·</span>
+          <span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);font-weight:600">30 Years Experience</span>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="hero-wm" aria-hidden="true">feel.</div>
-
-  <!-- Credential badge -->
-  <div class="hero-badge" aria-hidden="true">
-    <svg viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="52" cy="52" r="50" stroke="#3c556c" stroke-width="1.5" fill="#f6ede0"/>
-      <circle cx="52" cy="52" r="42" stroke="#64726b" stroke-width=".7" stroke-dasharray="3 4"/>
-      <path id="bp" d="M52,52 m -34,0 a 34,34 0 1,1 68,0 a 34,34 0 1,1 -68,0" fill="none"/>
-      <text font-size="7.5" font-family="Helvetica Neue,Arial,sans-serif" font-weight="600" letter-spacing="2.4" fill="#64726b">
-        <textPath href="#bp">FUNCTIONAL NUTRITION · GLP-1 · MENOPAUSE ·</textPath>
-      </text>
-      <text x="52" y="48" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#3c556c" font-style="italic">Cindi</text>
-      <text x="52" y="62" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#3c556c" font-style="italic">Stickle</text>
-    </svg>
-  </div>
-
-  <!-- wave bottom -->
-  <div class="hero-wave" aria-hidden="true">
-    <svg viewBox="0 0 1440 52" preserveAspectRatio="none" style="display:block;width:100%;height:52px">
-      <path d="M0,26 C200,52 400,0 720,26 C1040,52 1240,0 1440,26 L1440,52 L0,52Z" fill="var(--paper)"/>
-    </svg>
+    <!-- RIGHT: full-height photo panel -->
+    <div class="hero-right" style="position:relative">
+      <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+      <!-- photo placeholder — replace src with real photo -->
+      <img src="" alt="Cindi Stickle" onerror="this.style.display='none'"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;z-index:2">
+      <!-- overlay label (hidden when real photo loaded) -->
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:3">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(60,85,108,.4)" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(60,85,108,.45);font-weight:600">Add Cindi's photo here</span>
+      </div>
+      <!-- bottom gradient overlay -->
+      <div style="position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,rgba(60,85,108,.35),transparent);z-index:4"></div>
+      <!-- credential badge -->
+      <div style="position:absolute;bottom:40px;right:40px;z-index:5;width:110px;height:110px">
+        <svg viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="52" cy="52" r="50" stroke="rgba(255,255,255,.6)" stroke-width="1.5" fill="rgba(246,237,224,.85)"/>
+          <circle cx="52" cy="52" r="42" stroke="#64726b" stroke-width=".7" stroke-dasharray="3 4"/>
+          <path id="bp" d="M52,52 m -34,0 a 34,34 0 1,1 68,0 a 34,34 0 1,1 -68,0" fill="none"/>
+          <text font-size="7.5" font-family="Helvetica Neue,Arial,sans-serif" font-weight="600" letter-spacing="2.4" fill="#64726b">
+            <textPath href="#bp">FUNCTIONAL NUTRITION · GLP-1 · MENOPAUSE ·</textPath>
+          </text>
+          <text x="52" y="48" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#3c556c" font-style="italic">Cindi</text>
+          <text x="52" y="62" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#3c556c" font-style="italic">Stickle</text>
+        </svg>
+      </div>
+    </div>
   </div>
 </section>
 
