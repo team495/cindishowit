@@ -517,15 +517,28 @@ footer{background:var(--ink);padding:44px 0}
         </div>
         <p style="margin-top:18px">Every decision makes sense on its own. But what if the better question is: <em>what am I already doing that isn't working the way I think it is?</em></p>
       </div>
-      <div class="reveal" style="transition-delay:.15s;padding-top:48px">
-        <!-- decorative botanical -->
-        <div style="display:flex;justify-content:center;margin-bottom:24px;opacity:.2">
-          <svg width="56" height="96" viewBox="0 0 56 96" fill="none" stroke="var(--sage)" stroke-width="1.2" stroke-linecap="round">
-            <path d="M28 92 C28 92 28 48 28 4"/>
-            <path d="M28 68 C14 56 6 40 12 26 C18 38 26 58 28 66"/>
-            <path d="M28 50 C44 38 50 22 44 8 C36 22 29 42 28 48"/>
-            <path d="M28 32 C16 22 14 8 20 2 C24 12 27 24 28 30"/>
-          </svg>
+      <div class="reveal" style="transition-delay:.15s">
+        <!-- Photo + callout -->
+        <div style="position:relative;margin-bottom:28px">
+          <!-- Image frame -->
+          <div style="position:relative;width:100%;aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:#d2e0e8">
+            <canvas id="about-canvas" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+            <!-- Placeholder overlay — replace src with real photo -->
+            <img id="about-photo" src="" alt="Cindi Stickle" onerror="this.style.display='none'"
+              style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top">
+            <!-- visible only while no real photo is set -->
+            <div id="about-photo-placeholder" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:28px;background:linear-gradient(to top,rgba(60,85,108,.55) 0%,transparent 50%)">
+              <span style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:600">Add your photo here</span>
+            </div>
+          </div>
+          <!-- decorative corner tag -->
+          <div style="position:absolute;top:-14px;right:-14px;width:56px;height:56px;border-radius:50%;background:var(--peach);display:flex;align-items:center;justify-content:center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue-d)" stroke-width="1.5" stroke-linecap="round">
+              <path d="M12 2 C12 2 12 11 12 22"/>
+              <path d="M12 16 C6 11 4 5 8 1 C10 7 11.5 14 12 16"/>
+              <path d="M12 10 C18 5 20 0 16 -2 C14 4 12.5 8 12 10"/>
+            </svg>
+          </div>
         </div>
         <div class="callout">
           <p>Most GLP-1 advice focuses on the medication.<br>Most menopause advice focuses on hormones.<br><br><em>I help you understand what happens when both are affecting the same body.</em></p>
@@ -966,6 +979,88 @@ initStack('#tcard-stack', ['tcard-0','tcard-1','tcard-2']);
       ctx.arc(d.x, d.y, 2.5, 0, Math.PI*2);
       ctx.fill();
     });
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+})();
+
+// ── ABOUT PHOTO CANVAS ──
+(function() {
+  const canvas = document.getElementById('about-canvas');
+  if (!canvas) return;
+  const parent = canvas.parentElement;
+
+  function resize() {
+    canvas.width = parent.offsetWidth;
+    canvas.height = parent.offsetHeight;
+    draw();
+  }
+
+  function draw() {
+    const ctx = canvas.getContext('2d');
+    const w = canvas.width, h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+
+    // soft gradient background
+    const grad = ctx.createLinearGradient(0, 0, 0, h);
+    grad.addColorStop(0, '#d2e0e8');
+    grad.addColorStop(1, '#b8cdd8');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, w, h);
+
+    // botanical illustration — fuller, portrait-style
+    ctx.strokeStyle = 'rgba(60,85,108,0.22)';
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+
+    const plants = [
+      {x: w*0.65, y: h*1.02, scale: 1.8, rot: 0.04},
+      {x: w*0.18, y: h*1.0,  scale: 1.2, rot: -0.06},
+      {x: w*0.88, y: h*0.7,  scale: 0.8, rot: 0.1},
+      {x: w*0.08, y: h*0.55, scale: 0.6, rot: -0.04},
+      {x: w*0.5,  y: h*0.15, scale: 0.5, rot: 0.02},
+    ];
+
+    plants.forEach(({x, y, scale, rot}) => {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rot);
+      ctx.lineWidth = 1.4 * scale;
+      const ht = 200 * scale;
+
+      ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,-ht); ctx.stroke();
+
+      [[-30,-0.72,-50,-0.65,-20,-0.52], [-28,-0.58,-46,-0.5,-18,-0.38]].forEach(([ox,ay,mx,my,ex,ey])=>{
+        ctx.beginPath();
+        ctx.moveTo(0, -ht*(-ay));
+        ctx.bezierCurveTo(ox*scale,-ht*(-my),mx*scale,-ht*(-ey),ex*scale,-ht*(-ay+0.2));
+        ctx.bezierCurveTo(ex*scale/2,-ht*(-ay+0.08),0,-ht*(-ay+0.04),0,-ht*(-ay));
+        ctx.stroke();
+      });
+
+      [[32,-0.5,52,-0.44,22,-0.32],[28,-0.35,46,-0.28,18,-0.18]].forEach(([ox,ay,mx,my,ex,ey])=>{
+        ctx.beginPath();
+        ctx.moveTo(0,-ht*(-ay));
+        ctx.bezierCurveTo(ox*scale,-ht*(-my),mx*scale,-ht*(-ey),ex*scale,-ht*(-ay+0.2));
+        ctx.bezierCurveTo(ex*scale/2,-ht*(-ay+0.08),0,-ht*(-ay+0.04),0,-ht*(-ay));
+        ctx.stroke();
+      });
+
+      ctx.restore();
+    });
+
+    // scattered seeds
+    ctx.fillStyle = 'rgba(60,85,108,0.14)';
+    [{x:w*.3,y:h*.2},{x:w*.7,y:h*.35},{x:w*.15,y:h*.45},{x:w*.82,y:h*.18},{x:w*.45,y:h*.55}]
+      .forEach(d=>{ ctx.beginPath(); ctx.arc(d.x,d.y,3,0,Math.PI*2); ctx.fill(); });
+
+    // subtle vignette
+    const vig = ctx.createRadialGradient(w/2,h/2,h*0.3,w/2,h/2,h*0.75);
+    vig.addColorStop(0,'rgba(0,0,0,0)');
+    vig.addColorStop(1,'rgba(44,60,70,0.18)');
+    ctx.fillStyle = vig;
+    ctx.fillRect(0,0,w,h);
   }
 
   resize();
