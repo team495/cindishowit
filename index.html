@@ -245,6 +245,18 @@ nav.scrolled{box-shadow:0 2px 28px rgba(44,60,50,.08)}
 /* ── CORNER ORGANIC SHAPE ── */
 .sec-corner-art{position:absolute;pointer-events:none;opacity:.07}
 
+/* ── CURVED ARROWS ── */
+.curved-arrow-wrap{display:flex;justify-content:center;align-items:center;padding:8px 0;position:relative;z-index:2;pointer-events:none}
+.curved-arrow-wrap.arrow-right{justify-content:flex-end;padding-right:120px}
+.curved-arrow-wrap.arrow-left{justify-content:flex-start;padding-left:120px}
+
+/* ── CYCLE SECTION ── */
+.cycle-section{background:var(--blue);padding:100px 0;position:relative;overflow:hidden}
+.cycle-diagrams{display:flex;gap:80px;align-items:flex-start;justify-content:center;flex-wrap:wrap;margin-top:60px}
+.cycle-col{display:flex;flex-direction:column;align-items:center}
+.cycle-col-title{font-family:var(--serif);font-size:22px;font-weight:700;color:#f6ede0;text-align:center;margin-bottom:5px}
+.cycle-col-sub{font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(246,237,224,.42);text-align:center;margin-bottom:28px}
+
 /* ── OBJECTION ICONS ── */
 .obj-icon{width:32px;height:32px;flex-shrink:0;color:var(--sage);margin-top:6px}
 .obj-item{display:grid;grid-template-columns:1fr 1fr;gap:22px 56px;padding:32px 0;border-top:1px solid var(--border);align-items:start;transition:background .2s;position:relative}
@@ -639,6 +651,60 @@ footer{background:var(--ink);padding:44px 0}
     <p class="reveal" style="font-family:var(--serif);font-style:italic;font-size:24px;color:#000;margin-top:48px;text-align:center;max-width:800px;margin-left:auto;margin-right:auto">Not because you found the perfect set of rules. Because you finally understand how the pieces fit together.</p>
   </div>
 </section>
+
+<!-- curved arrow pointing down-right into cycle section -->
+<div class="curved-arrow-wrap arrow-right" aria-hidden="true" style="background:var(--paper);padding-bottom:0">
+  <svg width="120" height="110" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20,10 C22,38 60,55 88,90" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M78,94 L88,90 L84,79" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </svg>
+</div>
+
+<!-- ══ TWO CYCLES ══ -->
+<section class="cycle-section">
+  <!-- faint botanical corner top-left -->
+  <svg style="position:absolute;left:0;top:0;opacity:.06;pointer-events:none" width="200" height="220" viewBox="0 0 200 220" fill="none" aria-hidden="true">
+    <path d="M30 210 C30 130 30 50 30 10" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M30 170 C10 148 4 120 14 100 C22 120 28 152 30 168" stroke="#fff" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    <path d="M30 120 C52 98 58 70 48 50 C38 70 31 98 30 118" stroke="#fff" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    <path d="M30 76 C12 58 10 34 20 18 C26 34 29 58 30 74" stroke="#fff" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  </svg>
+  <!-- faint botanical corner bottom-right -->
+  <svg style="position:absolute;right:0;bottom:0;opacity:.06;pointer-events:none;transform:scaleX(-1)" width="180" height="200" viewBox="0 0 180 200" fill="none" aria-hidden="true">
+    <path d="M30 195 C30 120 30 46 30 8" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M30 155 C10 136 4 110 14 92 C22 110 28 138 30 153" stroke="#fff" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    <path d="M30 108 C52 88 58 62 48 42 C38 62 31 88 30 106" stroke="#fff" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  </svg>
+
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="reveal" style="text-align:center">
+      <span class="eyebrow" style="color:var(--peach)">Why the same effort gets different results</span>
+      <h2 style="color:#f6ede0;max-width:800px;margin:0 auto">Two Very Different Cycles</h2>
+      <p style="color:rgba(246,237,224,.65);max-width:560px;margin:14px auto 0">Most women are caught in the left one. Our work together moves you into the right one — and gives you the tools to stay there.</p>
+    </div>
+
+    <div class="cycle-diagrams reveal" style="transition-delay:.1s">
+      <div class="cycle-col">
+        <p class="cycle-col-title">The Stuck Pattern</p>
+        <p class="cycle-col-sub">Stalled progress · Muscle loss</p>
+        <svg id="svg-stuck" width="360" height="360" style="overflow:visible"></svg>
+      </div>
+      <div class="cycle-col">
+        <p class="cycle-col-title">The Nourished Pattern</p>
+        <p class="cycle-col-sub">Protected muscle · Sustained progress</p>
+        <svg id="svg-thrive" width="410" height="410" style="overflow:visible"></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- curved arrow pointing down-left into method section -->
+<div class="curved-arrow-wrap arrow-left" aria-hidden="true" style="background:var(--cream);padding-top:0">
+  <svg width="120" height="110" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M100,10 C98,38 60,55 32,90" stroke="var(--sage)" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M42,94 L32,90 L36,79" stroke="var(--sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </svg>
+</div>
 
 <!-- ══ METHOD — STACKING CARDS ══ -->
 <section id="method" style="background:var(--cream)">
@@ -1173,5 +1239,144 @@ initStack('#tcard-stack', ['tcard-0','tcard-1','tcard-2']);
 
   resize();
   window.addEventListener('resize', resize);
+})();
+
+// ── CYCLE DIAGRAMS ──────────────────────────────────────────────────────────
+(function() {
+  const NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, parent) {
+    const e = document.createElementNS(NS, tag);
+    for (const [k, v] of Object.entries(attrs || {})) e.setAttribute(k, String(v));
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function makeDefs(svg, id, color) {
+    const defs = el('defs', {}, svg);
+    const m = el('marker', { id, markerWidth:'9', markerHeight:'7', refX:'7', refY:'3.5', orient:'auto' }, defs);
+    el('path', { d:'M0,0 L0,7 L9,3.5 z', fill:color }, m);
+  }
+  const ICONS = {
+    restrict(g) {
+      el('path', {d:'M7,3 L7,10 M5,3 L5,7 C5,9 7,10 7,10 L7,21 M9,3 L9,10', stroke:'currentColor','stroke-width':'1.8',fill:'none','stroke-linecap':'round'}, g);
+      el('line', {x1:'13',y1:'12',x2:'21',y2:'12', stroke:'currentColor','stroke-width':'2','stroke-linecap':'round'}, g);
+    },
+    skip(g) {
+      el('circle', {cx:'12',cy:'12',r:'8.5',stroke:'currentColor','stroke-width':'1.8',fill:'none'}, g);
+      el('polyline', {points:'12,7.5 12,12 15,14', stroke:'currentColor','stroke-width':'1.8',fill:'none','stroke-linecap':'round','stroke-linejoin':'round'}, g);
+    },
+    muscle(g) {
+      el('line', {x1:'12',y1:'5',x2:'12',y2:'17', stroke:'currentColor','stroke-width':'1.8','stroke-linecap':'round'}, g);
+      el('line', {x1:'8',y1:'7',x2:'16',y2:'7', stroke:'currentColor','stroke-width':'3','stroke-linecap':'round'}, g);
+      el('line', {x1:'8',y1:'15',x2:'16',y2:'15', stroke:'currentColor','stroke-width':'3','stroke-linecap':'round'}, g);
+      el('path', {d:'M9,20 L12,17 L15,20', stroke:'currentColor','stroke-width':'1.8','stroke-linecap':'round','stroke-linejoin':'round',fill:'none'}, g);
+    },
+    slow(g) {
+      el('path', {d:'M12,20 C8,17 7,13 9,9.5 C10,7.5 11,9.5 11,9.5 C11,9.5 10.5,5.5 14,3 C14,3 13,7.5 15,9 C17,10.5 17,14 15,17.5 C14,19 13,20 12,20 Z', stroke:'currentColor','stroke-width':'1.8',fill:'none','stroke-linejoin':'round'}, g);
+    },
+    plateau(g) {
+      el('path', {d:'M3,18 L7,18 L10,13 L14,13 L17,18 L21,18', stroke:'currentColor','stroke-width':'1.8','stroke-linecap':'round','stroke-linejoin':'round',fill:'none'}, g);
+      el('path', {d:'M3,20 L21,20 M3,5 L3,20', stroke:'currentColor','stroke-width':'1.2','stroke-linecap':'round',fill:'none'}, g);
+    },
+    plate(g) {
+      el('circle', {cx:'12',cy:'14',r:'7',stroke:'currentColor','stroke-width':'1.8',fill:'none'}, g);
+      el('path', {d:'M5,11 Q12,7 19,11', stroke:'currentColor','stroke-width':'1.8','stroke-linecap':'round',fill:'none'}, g);
+      el('line', {x1:'12',y1:'3',x2:'12',y2:'7',stroke:'currentColor','stroke-width':'1.8','stroke-linecap':'round'}, g);
+      el('line', {x1:'9',y1:'14',x2:'15',y2:'14',stroke:'currentColor','stroke-width':'1.4','stroke-linecap':'round'}, g);
+    },
+    shield(g) {
+      el('path', {d:'M12,3 L20,6.5 L20,12.5 C20,17.5 16.5,21 12,22 C7.5,21 4,17.5 4,12.5 L4,6.5 Z', stroke:'currentColor','stroke-width':'1.8',fill:'none','stroke-linejoin':'round'}, g);
+      el('path', {d:'M8.5,12 L11,14.5 L15.5,9.5', stroke:'currentColor','stroke-width':'1.8','stroke-linecap':'round','stroke-linejoin':'round',fill:'none'}, g);
+    },
+    flame(g) {
+      el('path', {d:'M12,21 C7.5,18 6,13.5 8.5,9 C9.5,7 11,9 11,9 C11,9 10,5 14,2.5 C14,2.5 13,7.5 15.5,9 C18,10.5 18,15 15.5,18 C14.5,19.5 13,20.5 12,21 Z', stroke:'currentColor','stroke-width':'1.8',fill:'none','stroke-linejoin':'round'}, g);
+    },
+    chartUp(g) {
+      el('path', {d:'M3,19 L3,4 M3,19 L21,19', stroke:'currentColor','stroke-width':'1.4','stroke-linecap':'round',fill:'none'}, g);
+      el('path', {d:'M5,15 L9,11 L13,13 L19,6', stroke:'currentColor','stroke-width':'1.8','stroke-linecap':'round','stroke-linejoin':'round',fill:'none'}, g);
+      el('polyline', {points:'16,6 19,6 19,9', stroke:'currentColor','stroke-width':'1.8','stroke-linecap':'round','stroke-linejoin':'round',fill:'none'}, g);
+    },
+    energy(g) {
+      el('path', {d:'M13,2.5 L5,13.5 L11.5,13.5 L11,21.5 L19,10.5 L12.5,10.5 Z', stroke:'currentColor','stroke-width':'1.8',fill:'none','stroke-linejoin':'round','stroke-linecap':'round'}, g);
+    },
+    heart(g) {
+      el('path', {d:'M12,21 L4,13 C2.5,11 2.5,8 5,6 C7.5,4 10,5 11.5,7 L12,7.5 L12.5,7 C14,5 16.5,4 19,6 C21.5,8 21.5,11 20,13 Z', stroke:'currentColor','stroke-width':'1.8',fill:'none','stroke-linejoin':'round'}, g);
+    }
+  };
+  function putIcon(svg, key, cx, cy, size, color) {
+    const s = size / 24;
+    const g = el('g', { transform:`translate(${cx-size/2},${cy-size/2}) scale(${s})`, stroke:color, fill:'none', color, 'stroke-linecap':'round','stroke-linejoin':'round' }, svg);
+    ICONS[key](g);
+  }
+  function textLines(parent, x, y, lines, attrs) {
+    const t = el('text', { x, y, ...attrs }, parent);
+    lines.forEach((line, i) => {
+      const ts = el('tspan', { x, dy: i===0 ? '0' : '1.3em' }, t);
+      ts.textContent = line;
+    });
+  }
+  function anchor(θ) {
+    const c = Math.cos(θ);
+    return c > 0.3 ? 'start' : c < -0.3 ? 'end' : 'middle';
+  }
+  function drawCycle(svgId, cx, cy, R, cfg, nodes) {
+    const svg = document.getElementById(svgId);
+    if (!svg) return;
+    const N = nodes.length;
+    const { nodeR, gap, arrowColor, nodeFill, nodeStroke, iconColor, labelColor, centerLines, centerSub, centerColor, centerSubColor, dashed } = cfg;
+    makeDefs(svg, 'm-'+svgId, arrowColor);
+    const angles = nodes.map((_, i) => -Math.PI/2 + (2*Math.PI/N)*i);
+    const pts = angles.map(θ => ({ x: cx+R*Math.cos(θ), y: cy+R*Math.sin(θ), θ }));
+    pts.forEach((p, i) => {
+      const n = pts[(i+1)%N];
+      const θA = p.θ+gap, θB = n.θ-gap;
+      let δ = θB-θA; if (δ<0) δ+=2*Math.PI;
+      const large = δ>Math.PI?1:0;
+      const sx=cx+R*Math.cos(θA), sy=cy+R*Math.sin(θA);
+      const ex=cx+R*Math.cos(θB), ey=cy+R*Math.sin(θB);
+      el('path', { d:`M${sx},${sy} A${R},${R} 0 ${large},1 ${ex},${ey}`, fill:'none', stroke:arrowColor, 'stroke-width':'2.2', 'stroke-dasharray':dashed||'none', 'marker-end':`url(#m-${svgId})` }, svg);
+    });
+    pts.forEach((p, i) => {
+      const node = nodes[i];
+      el('circle', {cx:p.x+2,cy:p.y+3,r:nodeR,fill:'rgba(0,0,0,0.18)'}, svg);
+      el('circle', {cx:p.x,cy:p.y,r:nodeR,fill:nodeFill,stroke:nodeStroke,'stroke-width':'1.5'}, svg);
+      putIcon(svg, node.icon, p.x, p.y-3, 24, iconColor);
+      const lbl = el('text', { x:p.x, y:p.y+17, 'text-anchor':'middle', 'font-family':'-apple-system,Helvetica Neue,sans-serif', 'font-size':'10.5', 'font-weight':'600', fill:iconColor }, svg);
+      lbl.textContent = node.label;
+      const labDist = R+nodeR+20;
+      const lx=cx+labDist*Math.cos(p.θ), ly=cy+labDist*Math.sin(p.θ);
+      const lines = node.outer.split('\n');
+      textLines(svg, lx, ly-(lines.length-1)*7, lines, { 'text-anchor':anchor(p.θ), 'font-family':'-apple-system,Helvetica Neue,sans-serif', 'font-size':'11.5', 'font-weight':'600', fill:labelColor, 'dominant-baseline':'middle' });
+    });
+    const cy2 = cy-(centerLines.length-1)*11;
+    textLines(svg, cx, cy2, centerLines, { 'text-anchor':'middle', 'font-family':'Georgia,serif', 'font-size':'16', 'font-weight':'700', fill:centerColor, 'dominant-baseline':'middle' });
+    el('text', { x:cx, y:cy+(centerLines.length)*13+2, 'text-anchor':'middle', 'font-family':'Georgia,serif', 'font-size':'12', 'font-style':'italic', fill:centerSubColor, 'dominant-baseline':'middle' }, svg).textContent = centerSub;
+  }
+  drawCycle('svg-stuck', 180, 180, 118, {
+    nodeR:35, gap:0.30, dashed:'5,4',
+    arrowColor:'rgba(180,205,218,0.75)', nodeFill:'#c8dae5', nodeStroke:'rgba(60,85,108,0.2)',
+    iconColor:'#3c556c', labelColor:'rgba(246,237,224,0.78)',
+    centerColor:'#d2e0e8', centerSubColor:'rgba(210,224,232,0.45)',
+    centerLines:['No Progress'], centerSub:'Stalled momentum',
+  }, [
+    { label:'Restrict',   outer:'Eat less',            icon:'restrict' },
+    { label:'Skip meals', outer:'Appetite gone',        icon:'skip' },
+    { label:'Muscle loss',outer:'Not enough protein',   icon:'muscle' },
+    { label:'Slows down', outer:'Metabolism adapts',    icon:'slow' },
+    { label:'Plateau',    outer:'Progress stalls',      icon:'plateau' },
+  ]);
+  drawCycle('svg-thrive', 205, 205, 138, {
+    nodeR:37, gap:0.22, dashed:false,
+    arrowColor:'#fadabc', nodeFill:'#f6ede0', nodeStroke:'rgba(100,114,107,0.28)',
+    iconColor:'#3c556c', labelColor:'#f6ede0',
+    centerColor:'#fadabc', centerSubColor:'rgba(250,218,188,0.55)',
+    centerLines:['Progress'], centerSub:'Sustained momentum',
+  }, [
+    { label:'Eat enough',    outer:'Even with low appetite', icon:'plate' },
+    { label:'Protect muscle',outer:'Protein supported',      icon:'shield' },
+    { label:'Metabolism',   outer:'Fed, not slowed',         icon:'flame' },
+    { label:'Progress',     outer:'Weight moves right',      icon:'chartUp' },
+    { label:'Energy',       outer:'Clarity returns',         icon:'energy' },
+    { label:'Feel yourself',outer:'Confidence rebuilds',     icon:'heart' },
+  ]);
 })();
 </script>
