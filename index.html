@@ -246,6 +246,14 @@ nav.scrolled{box-shadow:0 2px 28px rgba(44,60,50,.08)}
 .sec-corner-art{position:absolute;pointer-events:none;opacity:.07}
 
 /* ── CURVED ARROWS ── */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-items:start}
+.pillar-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:40px 28px 44px;background:#fff;border-radius:16px;box-shadow:0 2px 24px rgba(60,85,108,.07);transition:transform .3s,box-shadow .3s}
+.pillar-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(60,85,108,.13)}
+.pillar-icon{width:96px;height:96px;margin-bottom:28px}
+.pillar-icon svg{width:100%;height:100%}
+.pillar-title{font-family:var(--serif);font-size:22px;font-weight:700;color:#000;margin-bottom:14px;line-height:1.25}
+.pillar-body{font-size:16px;line-height:1.7;color:#555;max-width:300px}
+@media(max-width:700px){.pillars{grid-template-columns:1fr}.pillar-card{padding:32px 24px}}
 .curved-arrow-wrap{display:flex;justify-content:center;align-items:center;padding:8px 0;position:relative;z-index:2;pointer-events:none}
 .curved-arrow-wrap.arrow-right{justify-content:flex-end;padding-right:120px}
 .curved-arrow-wrap.arrow-left{justify-content:flex-start;padding-left:120px}
@@ -477,6 +485,68 @@ footer{background:var(--ink);padding:44px 0}
     <circle cx="130" cy="16" r="2" fill="var(--sage)"/>
   </svg>
 </div>
+
+<!-- ══ THREE PILLARS ══ -->
+<section class="sec sec-pale" style="padding:90px 0 100px;position:relative;overflow:hidden">
+  <!-- faint blob top-right -->
+  <svg class="sec-corner-art" style="right:0;top:0;width:260px;height:260px" viewBox="0 0 260 260" aria-hidden="true">
+    <ellipse cx="220" cy="40" rx="120" ry="90" fill="var(--sage)" transform="rotate(-20 220 40)"/>
+  </svg>
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:64px">
+      <span class="eyebrow">what working together looks like</span>
+      <h2 style="max-width:640px;margin:0 auto">Three things that change<br>when you work with Cindi</h2>
+    </div>
+    <div class="pillars reveal" style="transition-delay:.1s">
+
+      <!-- PILLAR 1 -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="28" stroke="var(--blue)" stroke-width="1.4" fill="var(--sage-pale)"/>
+            <!-- clipboard / plan icon -->
+            <rect x="18" y="17" width="24" height="28" rx="3" stroke="var(--blue)" stroke-width="1.8" fill="none"/>
+            <rect x="24" y="13" width="12" height="6" rx="2" stroke="var(--blue)" stroke-width="1.6" fill="var(--sage-pale)"/>
+            <line x1="23" y1="27" x2="37" y2="27" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="23" y1="32" x2="37" y2="32" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="23" y1="37" x2="31" y2="37" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="pillar-title">A Plan Built for You</h3>
+        <p class="pillar-body">No templates. No generic macros. Your nutrition is designed around your body, your medication, and what your life actually looks like day to day.</p>
+      </div>
+
+      <!-- PILLAR 2 -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="28" stroke="var(--blue)" stroke-width="1.4" fill="var(--sage-pale)"/>
+            <!-- muscle / protect icon -->
+            <path d="M20 38 C20 32, 18 27, 22 23 C24 21, 27 21, 30 23 C33 21, 36 21, 38 23 C42 27, 40 32, 40 38" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M26 38 L26 32 C26 30, 27 28, 30 28 C33 28, 34 30, 34 32 L34 38" stroke="var(--blue)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <line x1="22" y1="38" x2="38" y2="38" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="pillar-title">Muscle Stays. Fat Goes.</h3>
+        <p class="pillar-body">GLP-1s can cause muscle loss if protein and calories aren't carefully managed. We make sure what leaves your body is fat — not the muscle keeping your metabolism alive.</p>
+      </div>
+
+      <!-- PILLAR 3 -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="28" stroke="var(--blue)" stroke-width="1.4" fill="var(--sage-pale)"/>
+            <!-- energy / lightning icon -->
+            <path d="M34 15 L22 31 L29.5 31 L26 45 L38 29 L30.5 29 Z" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+        <h3 class="pillar-title">Energy That Lasts</h3>
+        <p class="pillar-body">When you're eating the right amount of the right things, your energy stabilises, your thinking clears, and you stop white-knuckling your way through the afternoon.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ══ KIM QUOTE ══ -->
 <div class="kim reveal">
