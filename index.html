@@ -232,18 +232,36 @@ nav.scrolled{box-shadow:0 2px 28px rgba(44,60,50,.08)}
 .fy-item:nth-child(odd){padding-right:0}
 .fy-item:nth-child(even){padding-left:0;border-left:none}
 .fy-arrow{color:var(--sage);flex-shrink:0;font-family:var(--serif);font-style:italic;font-size:22px;margin-top:2px}
+.fy-icon{width:36px;height:36px;flex-shrink:0;margin-top:4px;color:var(--sage)}
+
+/* ── CURVE DIVIDERS ── */
+.curve-divider{display:block;width:100%;overflow:hidden;line-height:0}
+.curve-divider svg{display:block;width:100%;height:60px}
+
+/* ── IMAGINE ICONS ── */
+.imagine-idx{color:var(--sage);font-size:13px;letter-spacing:.16em;font-weight:700;text-transform:uppercase;flex-shrink:0;margin-top:6px;width:28px}
+.imagine-icon{width:28px;height:28px;flex-shrink:0;margin-top:4px;color:var(--blue);opacity:.7}
+
+/* ── CORNER ORGANIC SHAPE ── */
+.sec-corner-art{position:absolute;pointer-events:none;opacity:.07}
+
+/* ── OBJECTION ICONS ── */
+.obj-icon{width:32px;height:32px;flex-shrink:0;color:var(--sage);margin-top:6px}
+.obj-item{display:grid;grid-template-columns:1fr 1fr;gap:22px 56px;padding:32px 0;border-top:1px solid var(--border);align-items:start;transition:background .2s;position:relative}
 
 /* ── PHOTO BLOCK ── */
 .photo-block{background:var(--border-l);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:rgba(100,114,107,.35);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:24px;min-height:480px;position:sticky;top:calc(var(--nav-h) + 16px);transition:transform .3s var(--ease)}
 .photo-block:hover{transform:scale(1.01)}
 
 /* ── STATS ── */
-.stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);margin:28px 0 0}
-.stat{padding:28px 0;border-right:1px solid var(--border);text-align:center;transition:background .3s}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);margin:28px 0 0;border-radius:4px;overflow:hidden}
+.stat{padding:36px 24px;border-right:1px solid var(--border);text-align:center;transition:background .3s,transform .3s,box-shadow .3s;cursor:default;position:relative}
 .stat:last-child{border-right:none}
-.stat:hover{background:var(--cream)}
-.stat-n{font-family:var(--serif);font-size:40px;color:#000;display:block;margin-bottom:6px}
-.stat-l{font-size:16px;letter-spacing:.08em;text-transform:uppercase;color:#000;font-weight:500}
+.stat:hover{background:var(--sage-pale);transform:translateY(-4px);box-shadow:0 12px 32px rgba(60,85,108,.12);z-index:1}
+.stat:hover .stat-n{color:var(--blue)}
+.stat:hover .stat-l{color:var(--sage)}
+.stat-n{font-family:var(--serif);font-size:44px;color:#000;display:block;margin-bottom:8px;transition:color .3s}
+.stat-l{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#666;font-weight:600;transition:color .3s}
 
 /* ── PILLS ── */
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}
@@ -460,19 +478,49 @@ footer{background:var(--ink);padding:44px 0}
   </div>
 </div>
 
+<!-- curve down into pale section -->
+<div class="curve-divider" aria-hidden="true" style="background:var(--paper)">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#f0e8d8"/>
+  </svg>
+</div>
+
 <!-- ══ IS THIS FOR YOU ══ -->
-<section class="sec sec-pale" style="padding:100px 0">
-  <div class="wrap">
+<section class="sec sec-pale" style="padding:80px 0 100px;background:#f0e8d8;position:relative;overflow:hidden">
+  <!-- corner organic blob top-right -->
+  <svg class="sec-corner-art" style="right:-60px;top:-40px;width:320px" viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <ellipse cx="200" cy="100" rx="170" ry="130" fill="var(--sage)" transform="rotate(-20 200 100)"/>
+  </svg>
+  <div class="wrap" style="position:relative;z-index:1">
     <span class="eyebrow reveal">Is this for you?</span>
     <h2 class="reveal" style="transition-delay:.06s">This may be exactly where you are.</h2>
     <div class="fy-grid reveal" style="transition-delay:.12s">
-      <div class="fy-item"><span class="fy-arrow">→</span>You're doing the right things — protein, movement, medication — but progress has stalled and you can't figure out what's missing.</div>
-      <div class="fy-item"><span class="fy-arrow">→</span>You're losing weight on a GLP-1 but not sure whether you're protecting muscle, and your energy or strength doesn't feel right.</div>
-      <div class="fy-item"><span class="fy-arrow">→</span>GLP-1 appetite suppression is making it hard to eat enough, and you're not sure what adequate nutrition looks like at this stage.</div>
-      <div class="fy-item"><span class="fy-arrow">→</span>You're considering starting a GLP-1 and want a nutrition plan in place from the beginning — not figuring it out after the fact.</div>
+      <div class="fy-item">
+        <svg class="fy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        You're doing the right things — protein, movement, medication — but progress has stalled and you can't figure out what's missing.
+      </div>
+      <div class="fy-item">
+        <svg class="fy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        You're losing weight on a GLP-1 but not sure whether you're protecting muscle, and your energy or strength doesn't feel right.
+      </div>
+      <div class="fy-item">
+        <svg class="fy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2l1.5 1.5M12 2v2M21 2l-1.5 1.5M4.5 9H3M21 9h-1.5M17 9A5 5 0 1 1 7 9a5 5 0 0 1 10 0zM9 17v5M15 17v5"/></svg>
+        GLP-1 appetite suppression is making it hard to eat enough, and you're not sure what adequate nutrition looks like at this stage.
+      </div>
+      <div class="fy-item">
+        <svg class="fy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        You're considering starting a GLP-1 and want a nutrition plan in place from the beginning — not figuring it out after the fact.
+      </div>
     </div>
   </div>
 </section>
+
+<!-- curve up out of pale section -->
+<div class="curve-divider" aria-hidden="true" style="background:#f0e8d8">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,60 C360,0 1080,0 1440,60 L1440,60 L0,60 Z" fill="var(--paper)"/>
+  </svg>
+</div>
 
 <!-- ══ WHY CINDI ══ -->
 <section class="sec" id="about">
@@ -559,18 +607,34 @@ footer{background:var(--ink);padding:44px 0}
 </section>
 
 <!-- ══ FUTURE STATE ══ -->
-<section class="sec" style="padding:100px 0">
-  <div class="wrap">
+<section class="sec" style="padding:100px 0;position:relative;overflow:hidden">
+  <!-- faint blob bottom-left -->
+  <svg class="sec-corner-art" style="left:-80px;bottom:-60px;width:340px;opacity:.05" viewBox="0 0 340 300" fill="none" aria-hidden="true">
+    <ellipse cx="130" cy="200" rx="160" ry="140" fill="var(--sage)" transform="rotate(15 130 200)"/>
+  </svg>
+  <div class="wrap" style="position:relative;z-index:1">
     <div class="reveal" style="text-align:center;margin-bottom:56px">
       <span class="eyebrow">Imagine this</span>
       <h2 style="max-width:700px;margin:0 auto">What if you didn't have to<br>second-guess every decision?</h2>
       <div class="rule rule-c" style="margin-top:28px"></div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 80px;border-top:1px solid var(--border)" class="stagger">
-      <div class="imagine-item"><span class="imagine-idx">01</span>Imagine knowing how to feed your body even on the days when your appetite is low.</div>
-      <div class="imagine-item"><span class="imagine-idx">02</span>Imagine understanding what a slower week means, without immediately assuming you failed.</div>
-      <div class="imagine-item"><span class="imagine-idx">03</span>Imagine getting stronger while losing weight, instead of wondering what kind of weight you're losing.</div>
-      <div class="imagine-item"><span class="imagine-idx">04</span>And imagine feeling like yourself again. Clearer. Stronger. More confident in the decisions you're making for your health.</div>
+      <div class="imagine-item">
+        <svg class="imagine-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        Imagine knowing how to feed your body even on the days when your appetite is low.
+      </div>
+      <div class="imagine-item">
+        <svg class="imagine-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Imagine understanding what a slower week means, without immediately assuming you failed.
+      </div>
+      <div class="imagine-item">
+        <svg class="imagine-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/><path d="M12 12v4"/></svg>
+        Imagine getting stronger while losing weight, instead of wondering what kind of weight you're losing.
+      </div>
+      <div class="imagine-item">
+        <svg class="imagine-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10"/><path d="M12 6v6l4 2"/><circle cx="18" cy="18" r="4"/><path d="m16 18 1.5 1.5L20 16"/></svg>
+        And imagine feeling like yourself again. Clearer. Stronger. More confident in the decisions you're making for your health.
+      </div>
     </div>
     <p class="reveal" style="font-family:var(--serif);font-style:italic;font-size:24px;color:#000;margin-top:48px;text-align:center;max-width:800px;margin-left:auto;margin-right:auto">Not because you found the perfect set of rules. Because you finally understand how the pieces fit together.</p>
   </div>
@@ -740,10 +804,26 @@ footer{background:var(--ink);padding:44px 0}
   <div class="wrap">
     <span class="eyebrow reveal">If you're wondering…</span>
     <div>
-      <div class="obj-item reveal"><p class="obj-q">"Maybe I just need to give the medication more time."</p><p class="obj-a">Maybe. A slower week doesn't mean something is wrong. But waiting alone won't tell you whether you're eating enough, supporting muscle, or missing something in the bigger picture.</p></div>
-      <div class="obj-item reveal" style="transition-delay:.08s"><p class="obj-q">"My doctor already monitors me."</p><p class="obj-a">Good. My work doesn't replace your physician. I help with what happens between appointments: nutrition, eating with lower appetite, muscle support, movement, and recovery.</p></div>
-      <div class="obj-item reveal" style="transition-delay:.16s"><p class="obj-q">"I already know what I should be doing."</p><p class="obj-a">You may know a lot. But knowing protein matters is different from figuring out how to eat enough when you're rarely hungry. Sometimes you don't need more information — you need a different lens.</p></div>
-      <div class="obj-item reveal" style="transition-delay:.24s"><p class="obj-q">"I don't want another restrictive program."</p><p class="obj-a">Neither do I. I'm not here to give you another list of foods you can never eat again. We look at what you already eat and what changes make sense for your actual life.</p></div>
+      <div class="obj-item reveal">
+        <svg style="width:32px;height:32px;flex-shrink:0;color:var(--sage);margin-top:6px;grid-row:span 2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <p class="obj-q">"Maybe I just need to give the medication more time."</p>
+        <p class="obj-a">Maybe. A slower week doesn't mean something is wrong. But waiting alone won't tell you whether you're eating enough, supporting muscle, or missing something in the bigger picture.</p>
+      </div>
+      <div class="obj-item reveal" style="transition-delay:.08s">
+        <svg style="width:32px;height:32px;flex-shrink:0;color:var(--sage);margin-top:6px;grid-row:span 2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <p class="obj-q">"My doctor already monitors me."</p>
+        <p class="obj-a">Good. My work doesn't replace your physician. I help with what happens between appointments: nutrition, eating with lower appetite, muscle support, movement, and recovery.</p>
+      </div>
+      <div class="obj-item reveal" style="transition-delay:.16s">
+        <svg style="width:32px;height:32px;flex-shrink:0;color:var(--sage);margin-top:6px;grid-row:span 2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <p class="obj-q">"I already know what I should be doing."</p>
+        <p class="obj-a">You may know a lot. But knowing protein matters is different from figuring out how to eat enough when you're rarely hungry. Sometimes you don't need more information — you need a different lens.</p>
+      </div>
+      <div class="obj-item reveal" style="transition-delay:.24s">
+        <svg style="width:32px;height:32px;flex-shrink:0;color:var(--sage);margin-top:6px;grid-row:span 2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <p class="obj-q">"I don't want another restrictive program."</p>
+        <p class="obj-a">Neither do I. I'm not here to give you another list of foods you can never eat again. We look at what you already eat and what changes make sense for your actual life.</p>
+      </div>
     </div>
     <div class="reveal" style="margin-top:56px;text-align:center">
       <a href="#" class="btn" style="font-size:15px;padding:18px 48px;letter-spacing:.12em">Talk it through with Cindi →</a>
@@ -752,8 +832,15 @@ footer{background:var(--ink);padding:44px 0}
   </div>
 </section>
 
+<!-- curve down into dark section -->
+<div class="curve-divider" aria-hidden="true" style="background:var(--cream)">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C480,70 960,70 1440,0 L1440,70 L0,70 Z" fill="var(--blue)"/>
+  </svg>
+</div>
+
 <!-- ══ FREE CALL (DARK) ══ -->
-<section class="sec sec-dark" style="padding:96px 0">
+<section class="sec sec-dark" style="padding:96px 0;margin-top:-2px">
   <div class="dk-ambient" aria-hidden="true">free.</div>
   <!-- botanical in corner -->
   <div style="position:absolute;left:40px;top:50%;transform:translateY(-50%);opacity:.06;pointer-events:none" aria-hidden="true">
@@ -798,6 +885,13 @@ footer{background:var(--ink);padding:44px 0}
   </div>
 </section>
 
+<!-- curve up out of dark section -->
+<div class="curve-divider" aria-hidden="true" style="background:var(--blue);margin-top:-2px">
+  <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,70 C480,0 960,0 1440,70 L1440,70 L0,70 Z" fill="var(--paper)"/>
+  </svg>
+</div>
+
 <!-- ══ FINAL CLOSE ══ -->
 <section class="sec" style="padding:120px 0">
   <div style="max-width:1300px;margin:0 auto;padding:0 80px;text-align:center">
@@ -812,8 +906,15 @@ footer{background:var(--ink);padding:44px 0}
   </div>
 </section>
 
+<!-- curve into FAQ -->
+<div class="curve-divider" aria-hidden="true" style="background:var(--paper)">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="var(--cream)"/>
+  </svg>
+</div>
+
 <!-- ══ FAQ ══ -->
-<section class="sec sec-cream" id="faq">
+<section class="sec sec-cream" id="faq" style="margin-top:-2px">
   <div class="wrap">
     <div class="reveal" style="text-align:center;margin-bottom:56px">
       <span class="eyebrow">Before we talk</span>
